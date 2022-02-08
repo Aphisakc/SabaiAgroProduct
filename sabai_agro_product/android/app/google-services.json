@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "894761676706",
+    "project_id": "sabaiagroproduct",
+    "storage_bucket": "sabaiagroproduct.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894761676706:android:0f80fa058f8d2e84a18cfb",
+        "android_client_info": {
+          "package_name": "com.flutterflow.sabaiagroproduct"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "894761676706-f5bvfcaeev4v873usd5dbp14l3cabj3b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flutterflow.sabaiagroproduct",
+            "certificate_hash": "99f1de59cbbb9f0ab27aeb63c596235bc843b92a"
+          }
+        },
+        {
+          "client_id": "894761676706-t6ro6ngvvoclmm7ovekqqa06idgvu3qa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flutterflow.sabaiagroproduct",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "894761676706-u7dg2it98e5g6um06ml9icgnpu55sbbb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARnm600OFJlQhv6GMDnNaTbI0Mq9GBBhQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "894761676706-u7dg2it98e5g6um06ml9icgnpu55sbbb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "894761676706-c0pbd6452sncd0e4rrcheukc07ua2uuc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flutterflow.sabaiagroproduct"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

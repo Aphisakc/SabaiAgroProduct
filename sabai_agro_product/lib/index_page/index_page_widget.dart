@@ -1,8 +1,11 @@
+import 'package:sabai_agro_product/carousel_page/carousel_fish.dart';
 import 'package:sabai_agro_product/carousel_page/carousel_index.dart';
+import 'package:sabai_agro_product/carousel_page/carousel_shrimp.dart';
 import 'package:sabai_agro_product/contact_page/contact_page_widget.dart';
-import 'package:sabai_agro_product/fish_product_page/fish_product_page_widget.dart';
+import 'package:sabai_agro_product/widgets/product_page_widget.dart';
 import 'package:sabai_agro_product/home_page/home_page_widget.dart';
 import 'package:sabai_agro_product/shrimp_product_page/shrimp_product_page_widget.dart';
+import 'package:sabai_agro_product/utility/my_constant.dart';
 
 import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
@@ -46,36 +49,26 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
+        title: Row(
+          children: [
+            Text('Index', style: MyConstant().h2Style()),
+          ],
+        ),
         backgroundColor: Color(0xFF039BE5),
         automaticallyImplyLeading: true,
-        leading: Row(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            FlutterFlowIconButton(
-              borderColor: Colors.transparent,
-              borderRadius: 30,
-              borderWidth: 1,
-              buttonSize: 60,
-              icon: Icon(
-                Icons.arrow_back_ios,
-                color: FlutterFlowTheme.tertiaryColor,
-                size: 30,
-              ),
-              onPressed: () async {
-                Navigator.pop(context);
-              },
-            ),
-            Text(
-              'Index',
-              style: FlutterFlowTheme.bodyText1.override(
-                fontFamily: 'PLSPRO001',
-                color: FlutterFlowTheme.tertiaryColor,
-                fontSize: 20,
-                fontWeight: FontWeight.w500,
-                useGoogleFonts: false,
-              ),
-            )
-          ],
+        leading: FlutterFlowIconButton(
+          borderColor: Colors.transparent,
+          borderRadius: 30,
+          borderWidth: 1,
+          buttonSize: 60,
+          icon: Icon(
+            Icons.arrow_back_ios,
+            color: FlutterFlowTheme.tertiaryColor,
+            size: 30,
+          ),
+          onPressed: () async {
+            Navigator.pop(context);
+          },
         ),
         actions: [],
         centerTitle: true,
@@ -112,7 +105,7 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                         children: [
                           Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(16, 16, 16, 0),
+                                EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -274,11 +267,7 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                 EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                             child: Text(
                               'เติบโตไปด้วยกัน',
-                              style: FlutterFlowTheme.title3.override(
-                                fontFamily: 'PLSPRO001',
-                                color: FlutterFlowTheme.tertiaryColor,
-                                useGoogleFonts: false,
-                              ),
+                              style: MyConstant().h1Style(),
                             ),
                           )
                         ],
@@ -300,248 +289,265 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                     ).image,
                   ),
                 ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          InkWell(
-                            onTap: () async {
-                              await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>HomePageWidget()
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            InkWell(
+                              onTap: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => HomePageWidget()),
+                                );
+                              },
+                              child: Container(
+                                width:
+                                    MediaQuery.of(context).size.width * 0.333,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.rectangle,
                                 ),
-                              );
-                            },
-                            child: Container(
-                              width: MediaQuery.of(context).size.width * 0.333,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.rectangle,
-                              ),
-                              child: InkWell(
-                                onTap: () async {
-                                  await Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => HomePageWidget()
-                                    ),
-                                  );
-                                },
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Image.network(
-                                      'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FiconPic%2FMenu%20Icon_01.png?alt=media&token=7150230d-473f-4528-bab7-a1e7d54d6341',
-                                      width: 100,
-                                      height: 100,
-                                      fit: BoxFit.cover,
-                                    ),
-                                    Text(
-                                      'Home',
-                                      style: FlutterFlowTheme.bodyText1
-                                          .override(
-                                              fontFamily: 'PLSPRO001',
-                                              useGoogleFonts: false,
-                                              fontSize: 20),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          InkWell(
-                            onTap: () async {
-                              await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => FishProductPageWidget()
-                                ),
-                              );
-                            },
-                            child: Container(
-                              width: MediaQuery.of(context).size.width * 0.333,
-                              decoration: BoxDecoration(),
-                              child: InkWell(
-                                onTap: () async {
-                                  await Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => FishProductPageWidget()
-                                    ),
-                                  );
-                                },
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Image.network(
-                                      'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FiconPic%2FMenu%20Icon_02.png?alt=media&token=c54e9668-4cc9-4618-b188-e10f484cbbf6',
-                                      width: 100,
-                                      height: 100,
-                                      fit: BoxFit.contain,
-                                    ),
-                                    Text(
-                                      'กลุ่มสินค้าปลา',
-                                      style: FlutterFlowTheme.bodyText1
-                                          .override(
-                                              fontFamily: 'PLSPRO001',
-                                              useGoogleFonts: false,
-                                              fontSize: 20),
-                                    )
-                                  ],
+                                child: InkWell(
+                                  onTap: () async {
+                                    await Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              HomePageWidget()),
+                                    );
+                                  },
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Image.network(
+                                        'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FiconPic%2FMenu%20Icon_01.png?alt=media&token=7150230d-473f-4528-bab7-a1e7d54d6341',
+                                        width: 100,
+                                        height: 100,
+                                        fit: BoxFit.cover,
+                                      ),
+                                      Text(
+                                        'Home',
+                                        style: FlutterFlowTheme.bodyText1
+                                            .override(
+                                                fontFamily: 'PLSPRO001',
+                                                useGoogleFonts: false,
+                                                fontSize: 20),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                          InkWell(
-                            onTap: () async {
-                              await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => ShrimpProductPageWidget()
-                                ),
-                              );
-                            },
-                            child: Container(
-                              width: MediaQuery.of(context).size.width * 0.333,
-                              decoration: BoxDecoration(),
-                              child: InkWell(
-                                onTap: () async {
-                                  await Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => ShrimpProductPageWidget()
+                            InkWell(
+                              onTap: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => ProductPageWidget(
+                                      collectionFirebase: 'fish_product',
+                                      titleGroup: 'กลุ่มสินค้าปลา', carouselWidget: CarouselFishPage(),
                                     ),
-                                  );
-                                },
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Image.network(
-                                      'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FiconPic%2FMenu%20Icon_03.png?alt=media&token=d6619658-5e17-4f4d-9898-c019244f7f85',
-                                      width: 100,
-                                      height: 100,
-                                      fit: BoxFit.contain,
-                                    ),
-                                    Text(
-                                      'กลุ่มสินค้ากุ้ง',
-                                      style: FlutterFlowTheme.bodyText1
-                                          .override(
-                                              fontFamily: 'PLSPRO001',
-                                              useGoogleFonts: false,
-                                              fontSize: 20),
-                                    )
-                                  ],
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                width:
+                                    MediaQuery.of(context).size.width * 0.333,
+                                decoration: BoxDecoration(),
+                                child: InkWell(
+                                  onTap: () async {
+                                    await Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => ProductPageWidget(
+                                          collectionFirebase: 'fish_product',
+                                          titleGroup: 'กลุ่มสินค้าปลา',carouselWidget: CarouselFishPage(),
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Image.network(
+                                        'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FiconPic%2FMenu%20Icon_02.png?alt=media&token=c54e9668-4cc9-4618-b188-e10f484cbbf6',
+                                        width: 100,
+                                        height: 100,
+                                        fit: BoxFit.contain,
+                                      ),
+                                      Text(
+                                        'กลุ่มสินค้าปลา',
+                                        style: FlutterFlowTheme.bodyText1
+                                            .override(
+                                                fontFamily: 'PLSPRO001',
+                                                useGoogleFonts: false,
+                                                fontSize: 20),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
-                          )
-                        ],
+                            InkWell(
+                              onTap: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => ProductPageWidget(
+                                      collectionFirebase: 'shrimp_product',
+                                      titleGroup: 'กลุ่มสินค้ากุ้ง', carouselWidget: CarouselShrimpPage(),
+                                    ),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                width:
+                                    MediaQuery.of(context).size.width * 0.333,
+                                decoration: BoxDecoration(),
+                                child: InkWell(
+                                  onTap: () async {
+                                    await Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => ProductPageWidget(
+                                          collectionFirebase: 'shrimp_product',
+                                          titleGroup: 'กลุ่มสินค้ากุ้ง', carouselWidget: CarouselShrimpPage(),
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Image.network(
+                                        'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FiconPic%2FMenu%20Icon_03.png?alt=media&token=d6619658-5e17-4f4d-9898-c019244f7f85',
+                                        width: 100,
+                                        height: 100,
+                                        fit: BoxFit.contain,
+                                      ),
+                                      Text(
+                                        'กลุ่มสินค้ากุ้ง',
+                                        style: FlutterFlowTheme.bodyText1
+                                            .override(
+                                                fontFamily: 'PLSPRO001',
+                                                useGoogleFonts: false,
+                                                fontSize: 20),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.333,
-                            decoration: BoxDecoration(),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Image.network(
-                                  'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FiconPic%2FMenu%20Icon_05.png?alt=media&token=c2d9d282-0c88-4699-85ab-1f54d209516a',
-                                  width: 100,
-                                  height: 100,
-                                  fit: BoxFit.contain,
-                                ),
-                                Text(
-                                  'โรคสัตว์น้ำ',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'PLSPRO001',
-                                      useGoogleFonts: false,
-                                      fontSize: 20),
-                                )
-                              ],
-                            ),
-                          ),
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.333,
-                            decoration: BoxDecoration(),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Image.network(
-                                  'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FiconPic%2FMenu%20Icon_04.png?alt=media&token=64517724-b17c-44e8-955c-0dc2593e28e7',
-                                  width: 100,
-                                  height: 100,
-                                  fit: BoxFit.contain,
-                                ),
-                                Text(
-                                  'โปรแกรมคำนวณ',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'PLSPRO001',
-                                      useGoogleFonts: false,
-                                      fontSize: 20),
-                                )
-                              ],
-                            ),
-                          ),
-                          InkWell(
-                            onTap: () async {
-                              await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>ContactPageWidget()
-                                ),
-                              );
-                            },
-                            child: Container(
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Container(
                               width: MediaQuery.of(context).size.width * 0.333,
                               decoration: BoxDecoration(),
-                              child: InkWell(
-                                onTap: () async {
-                                  await Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => ContactPageWidget()
-                                    ),
-                                  );
-                                },
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Image.network(
-                                      'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FiconPic%2FMenu%20Icon_06.png?alt=media&token=63884a2d-aa8d-4df0-9373-d53e859277a2',
-                                      width: 100,
-                                      height: 100,
-                                      fit: BoxFit.contain,
-                                    ),
-                                    Text(
-                                      'ติดต่อเรา',
-                                      style: FlutterFlowTheme.bodyText1
-                                          .override(
-                                              fontFamily: 'PLSPRO001',
-                                              useGoogleFonts: false,
-                                              fontSize: 20),
-                                    )
-                                  ],
-                                ),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Image.network(
+                                    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FiconPic%2FMenu%20Icon_05.png?alt=media&token=c2d9d282-0c88-4699-85ab-1f54d209516a',
+                                    width: 100,
+                                    height: 100,
+                                    fit: BoxFit.contain,
+                                  ),
+                                  Text(
+                                    'โรคสัตว์น้ำ',
+                                    style: FlutterFlowTheme.bodyText1.override(
+                                        fontFamily: 'PLSPRO001',
+                                        useGoogleFonts: false,
+                                        fontSize: 20),
+                                  )
+                                ],
                               ),
                             ),
-                          )
-                        ],
-                      ),
-                    )
-                  ],
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.333,
+                              decoration: BoxDecoration(),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Image.network(
+                                    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FiconPic%2FMenu%20Icon_04.png?alt=media&token=64517724-b17c-44e8-955c-0dc2593e28e7',
+                                    width: 100,
+                                    height: 100,
+                                    fit: BoxFit.contain,
+                                  ),
+                                  Text(
+                                    'โปรแกรมคำนวณ',
+                                    style: FlutterFlowTheme.bodyText1.override(
+                                        fontFamily: 'PLSPRO001',
+                                        useGoogleFonts: false,
+                                        fontSize: 20),
+                                  )
+                                ],
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          ContactPageWidget()),
+                                );
+                              },
+                              child: Container(
+                                width:
+                                    MediaQuery.of(context).size.width * 0.333,
+                                decoration: BoxDecoration(),
+                                child: InkWell(
+                                  onTap: () async {
+                                    await Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              ContactPageWidget()),
+                                    );
+                                  },
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Image.network(
+                                        'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FiconPic%2FMenu%20Icon_06.png?alt=media&token=63884a2d-aa8d-4df0-9373-d53e859277a2',
+                                        width: 100,
+                                        height: 100,
+                                        fit: BoxFit.contain,
+                                      ),
+                                      Text(
+                                        'ติดต่อเรา',
+                                        style: FlutterFlowTheme.bodyText1
+                                            .override(
+                                                fontFamily: 'PLSPRO001',
+                                                useGoogleFonts: false,
+                                                fontSize: 20),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             )

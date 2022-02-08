@@ -1,5 +1,6 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+// import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sabai_agro_product/example/head_tab.dart';
@@ -8,12 +9,13 @@ import 'package:sabai_agro_product/welcome_page/welcome_page_widget.dart';
 
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'home_page/home_page_widget.dart';
-import 'fish_product_page/fish_product_page_widget.dart';
+import 'widgets/product_page_widget.dart';
 import 'shrimp_product_page/shrimp_product_page_widget.dart';
 import 'contact_page/contact_page_widget.dart';
 
-void main() {
-  runApp(MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp().then((value) => runApp(MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -22,11 +24,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Sabai Agro Product',
-      localizationsDelegates: [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
+      // localizationsDelegates: [
+      //   GlobalMaterialLocalizations.delegate,
+      //   GlobalWidgetsLocalizations.delegate,
+      //   GlobalCupertinoLocalizations.delegate,
+      // ],
       supportedLocales: const [Locale('en', '')],
       theme: ThemeData(primarySwatch: Colors.blue),
       home: WelcomePageWidget(),
