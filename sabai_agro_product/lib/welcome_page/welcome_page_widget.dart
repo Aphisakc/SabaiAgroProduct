@@ -137,6 +137,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                     ],
                   ),
                 ),
+                Spacer(),
                 Container(
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
@@ -163,7 +164,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                     ),
                   ),
                 ),
-                Container(
+                Container(margin: EdgeInsets.only(top: 100),
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height * 0.05,
                   decoration: BoxDecoration(
@@ -279,7 +280,8 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                       ],
                     ),
                   ),
-                )
+                ),
+                SizedBox(height: 30,),
               ],
             ),
           ),

@@ -39,6 +39,7 @@ dependencies:
   cloud_firestore: ^3.1.7
   firebase_storage: ^10.2.6
   firebase_auth: ^3.3.6
+  advance_pdf_viewer: 2.0.0
   
 
 flutter_icon:

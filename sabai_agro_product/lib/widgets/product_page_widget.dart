@@ -125,7 +125,7 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
                                         nameProduct: productModels[index].name,
                                         detailsProduct:
                                             productModels[index].details,
-                                        index: index,
+                                        index: index, productModel: productModels[index],
                                       ),
                                     ),
                             ),

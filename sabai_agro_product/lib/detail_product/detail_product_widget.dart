@@ -1,13 +1,23 @@
-import '../flutter_flow/flutter_flow_icon_button.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'package:sabai_agro_product/models/product_model.dart';
+import 'package:sabai_agro_product/utility/my_constant.dart';
+
+import '../flutter_flow/flutter_flow_icon_button.dart';
+import '../flutter_flow/flutter_flow_theme.dart';
+import '../flutter_flow/flutter_flow_util.dart';
+
 class DetailProductWidget extends StatefulWidget {
-  DetailProductWidget({Key key}) : super(key: key);
+  final ProductModel productModel;
+
+  DetailProductWidget({
+    Key key,
+    @required this.productModel,
+  }) : super(key: key);
 
   @override
   _DetailProductWidgetState createState() => _DetailProductWidgetState();
@@ -16,54 +26,54 @@ class DetailProductWidget extends StatefulWidget {
 class _DetailProductWidgetState extends State<DetailProductWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
+  ProductModel productModel;
+  PDFDocument pdfDocument;
+
+  @override
+  void initState() {
+    super.initState();
+    productModel = widget.productModel;
+    loadPdf();
+  }
+
+  Future<void> loadPdf() async {
+    try {
+      // var result = await PDFDocument.fromURL(productModel.pdf);
+      var result = await PDFDocument.fromURL(MyConstant.testPdf);
+      setState(() {
+        pdfDocument = result;
+      });
+    } catch (e) {}
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
+        title: Row(
+          children: [
+            Text(
+              productModel.name,
+              style: MyConstant().h2Style(),
+            ),
+          ],
+        ),
         backgroundColor: Color(0xFF039BE5),
         automaticallyImplyLeading: true,
-        leading: Row(
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            FlutterFlowIconButton(
-              borderColor: Colors.transparent,
-              borderRadius: 30,
-              borderWidth: 1,
-              buttonSize: 60,
-              icon: Icon(
-                Icons.arrow_back_ios,
-                color: FlutterFlowTheme.tertiaryColor,
-                size: 30,
-              ),
-              onPressed: () async {
-                Navigator.pop(context);
-              },
-            ),
-            Align(
-              alignment: AlignmentDirectional(0, 0),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 100,
-                decoration: BoxDecoration(),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Text(
-                      'product name',
-                      style: FlutterFlowTheme.bodyText1.override(
-                        fontFamily: 'Poppins',
-                        color: FlutterFlowTheme.tertiaryColor,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            )
-          ],
+        leading: FlutterFlowIconButton(
+          borderColor: Colors.transparent,
+          borderRadius: 30,
+          borderWidth: 1,
+          buttonSize: 60,
+          icon: Icon(
+            Icons.arrow_back_ios,
+            color: FlutterFlowTheme.tertiaryColor,
+            size: 30,
+          ),
+          onPressed: () async {
+            Navigator.pop(context);
+          },
         ),
         actions: [],
         centerTitle: true,
@@ -179,10 +189,11 @@ class _DetailProductWidgetState extends State<DetailProductWidget> {
                                   ),
                                   child: Align(
                                     alignment: AlignmentDirectional(0, 0),
-                                    child: FaIcon(
-                                      FontAwesomeIcons.fish,
-                                      color: Color(0xFF4EA6E8),
-                                      size: 30,
+                                    child: SizedBox(
+                                      // width: 30,
+                                      // height: 30,
+                                      child:
+                                          Image.asset('assets/images/logo.png'),
                                     ),
                                   ),
                                 )
@@ -230,7 +241,7 @@ class _DetailProductWidgetState extends State<DetailProductWidget> {
                                                   height: 50,
                                                   decoration: BoxDecoration(),
                                                   child: Text(
-                                                    'Product name',
+                                                    productModel.name,
                                                     style: FlutterFlowTheme
                                                         .bodyText1
                                                         .override(
@@ -266,13 +277,13 @@ class _DetailProductWidgetState extends State<DetailProductWidget> {
                                                     height: 70,
                                                     decoration: BoxDecoration(),
                                                     child: AutoSizeText(
-                                                      'Properties',
+                                                      productModel.details,
                                                       style: FlutterFlowTheme
                                                           .bodyText1
                                                           .override(
                                                         fontFamily: 'PLSPRO001',
                                                         color: FlutterFlowTheme
-                                                            .tertiaryColor,
+                                                            .primaryColor,
                                                         fontSize: 20,
                                                         fontWeight:
                                                             FontWeight.w500,
@@ -304,7 +315,7 @@ class _DetailProductWidgetState extends State<DetailProductWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Image.network(
-                                            '',
+                                            productModel.pic,
                                             width: 100,
                                             height: 100,
                                             fit: BoxFit.contain,
@@ -332,38 +343,16 @@ class _DetailProductWidgetState extends State<DetailProductWidget> {
                   ),
                 ),
               ),
-              Expanded(
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.tertiaryColor,
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: Image.network(
-                        '',
-                      ).image,
-                    ),
-                  ),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          'PDF Details of Product',
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'PLSPRO001',
-                            fontSize: 30,
-                            useGoogleFonts: false,
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              )
+              pdfDocument == null
+                  ? Text('No Data')
+                  : Expanded(
+                      child: PDFViewer(
+                      document: pdfDocument,
+                      scrollDirection: Axis.vertical,
+                      showIndicator: false,
+                      showNavigation: false,
+                      showPicker: false,
+                    ))
             ],
           ),
         ),

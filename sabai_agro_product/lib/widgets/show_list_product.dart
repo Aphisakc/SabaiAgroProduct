@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 
 import 'package:sabai_agro_product/detail_product/detail_product_widget.dart';
 import 'package:sabai_agro_product/flutter_flow/flutter_flow_theme.dart';
+import 'package:sabai_agro_product/models/product_model.dart';
 import 'package:sabai_agro_product/utility/my_constant.dart';
 
 class ShowListProduct extends StatelessWidget {
   String urlImage;
   String nameProduct;
   String detailsProduct;
-
   int index;
+  ProductModel productModel;
 
   ShowListProduct({
     Key key,
@@ -17,6 +18,7 @@ class ShowListProduct extends StatelessWidget {
     @required this.nameProduct,
     @required this.detailsProduct,
     @required this.index,
+    @required this.productModel,
   }) : super(key: key);
 
   @override
@@ -26,29 +28,29 @@ class ShowListProduct extends StatelessWidget {
         await Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => DetailProductWidget(),
+            builder: (context) => DetailProductWidget(productModel: productModel,),
           ),
         );
       },
-      child: Card(
-        clipBehavior: Clip.antiAliasWithSaveLayer,
-        color: Color(0xFFF5F5F5),
-        elevation: 2,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
+      child: SizedBox(
+        // clipBehavior: Clip.antiAliasWithSaveLayer,
+        // color: Color(0xFFF5F5F5),
+        // elevation: 2,
+        // shape: RoundedRectangleBorder(
+        //   borderRadius: BorderRadius.circular(12),
+        // ),
         child: Container(
           width: MediaQuery.of(context).size.width,
           height: 120,
           decoration: BoxDecoration(
-            color: index%2 == 0 ? Colors.white : Colors.grey,
+            color: index % 2 == 0 ? Colors.white : Colors.grey,
           ),
           child: InkWell(
             onTap: () async {
               await Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailProductWidget(),
+                  builder: (context) => DetailProductWidget(productModel: productModel,),
                 ),
               );
             },
@@ -62,7 +64,9 @@ class ShowListProduct extends StatelessWidget {
                       width: 120,
                       height: 120,
                       decoration: BoxDecoration(
-                        color: index % 2 == 0 ? MyConstant.primaryDarkColor : MyConstant.primaryLightColor ,
+                        color: index % 2 == 0
+                            ? MyConstant.primaryDarkColor
+                            : MyConstant.primaryLightColor,
                       ),
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
