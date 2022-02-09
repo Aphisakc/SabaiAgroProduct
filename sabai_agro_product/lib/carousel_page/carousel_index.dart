@@ -13,13 +13,13 @@ class _CarouselPageState extends State<CarouselIndexPage> {
   final CarouselController _controller = CarouselController();
 
   final List<String> imgList = [
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FcarouselPic%2Ftabtim1.png?alt=media&token=6a506725-f4c6-4b45-a996-f67d5e7d4c3d',
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FcarouselPic%2Fnile1.png?alt=media&token=886cb7b7-dd70-4d1d-bcd7-866c5a8a3e40',
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FcarouselPic%2Fduk1.png?alt=media&token=f8a62946-4a1a-4840-8a30-517f29baeeef',
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FcarouselPic%2Fanabas1.png?alt=media&token=2d0488ba-4f11-4eba-82ed-bbd936abc0b5',
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FcarouselPic%2Fseabass1.png?alt=media&token=f8282127-0614-448a-8898-687318db1be6',
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FcarouselPic%2Fshrimp1.png?alt=media&token=cce4bd89-2f98-4f08-b4f3-55bf096e191f',
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FcarouselPic%2Fnile2.png?alt=media&token=5d45cf9b-6691-47a2-b8e9-d8d91aa5769e'
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FcarouselPic%2Fanabas1.png?alt=media&token=394ec8a1-474f-4dd6-b360-028868152803',
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FcarouselPic%2Fduk1.png?alt=media&token=6292f08f-1a35-463f-a300-71750d9d1f23',
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FcarouselPic%2Fnile1.png?alt=media&token=84d8d543-92a0-498b-ad45-cfb90382ff19',
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FcarouselPic%2Fnile2.png?alt=media&token=cdb2ac3c-cf38-4c52-9def-fdaa230c0469',
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FcarouselPic%2Fseabass1.png?alt=media&token=e82e8d72-5923-457e-9f35-b474bdef64f1',
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FcarouselPic%2Fshrimp1.png?alt=media&token=902e3d31-e197-4f39-9bc3-60678512731f',
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FcarouselPic%2Ftabtim1.png?alt=media&token=17f42424-e331-4af3-8b8a-3eea3a44e553'
   ];
 
   @override

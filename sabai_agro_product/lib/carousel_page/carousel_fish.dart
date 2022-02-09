@@ -13,12 +13,11 @@ class _CarouselPageState extends State<CarouselFishPage> {
   final CarouselController _controller = CarouselController();
 
   final List<String> imgList = [
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FcarouselPic%2Ftabtim1.png?alt=media&token=6a506725-f4c6-4b45-a996-f67d5e7d4c3d',
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FcarouselPic%2Fnile1.png?alt=media&token=886cb7b7-dd70-4d1d-bcd7-866c5a8a3e40',
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FcarouselPic%2Fduk1.png?alt=media&token=f8a62946-4a1a-4840-8a30-517f29baeeef',
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FcarouselPic%2Fanabas1.png?alt=media&token=2d0488ba-4f11-4eba-82ed-bbd936abc0b5',
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FcarouselPic%2Fseabass1.png?alt=media&token=f8282127-0614-448a-8898-687318db1be6',
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FcarouselPic%2Fnile2.png?alt=media&token=5d45cf9b-6691-47a2-b8e9-d8d91aa5769e'
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/fish_product_page%2Fanabas1.png?alt=media&token=0774352e-091b-4b24-8824-7020248b7126',
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/fish_product_page%2Fnile1.png?alt=media&token=e08a2fb5-998a-417f-b427-dcfedebd3e71',
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/fish_product_page%2Fnile2.png?alt=media&token=1d7a4b66-6fb3-4488-a4ad-627d7918a3ed',
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/fish_product_page%2Fseabass1.png?alt=media&token=1e830b73-ffa8-48da-afda-f6b47a409be7',
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/fish_product_page%2Ftabtim1.png?alt=media&token=2f0c2b89-139e-4978-94a2-9c085dbd0a01'
   ];
 
   @override

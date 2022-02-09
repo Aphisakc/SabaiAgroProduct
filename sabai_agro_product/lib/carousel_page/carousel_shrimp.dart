@@ -13,11 +13,11 @@ class _CarouselPageState extends State<CarouselShrimpPage> {
   final CarouselController _controller = CarouselController();
 
   final List<String> imgList = [
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/shrimp_product_page%2Fshrimp1.png?alt=media&token=0f849fef-9dfe-45b8-95f2-4636532921e5',
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/shrimp_product_page%2Fshrimp2.png?alt=media&token=71da51fd-c509-4ece-bd1b-349267f057d9',
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/shrimp_product_page%2Fshrimp3.png?alt=media&token=eff2c381-e0cc-4474-b46c-ed8875a9c4bc',
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/shrimp_product_page%2Fshrimp4.png?alt=media&token=ec73e320-dd45-409a-89d0-a19601fe7866',
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/shrimp_product_page%2Fshrimp5.png?alt=media&token=79878cb9-76b5-424a-9bcc-3e1467debf4c'
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/shrimp_product_page%2Fshrimp1.png?alt=media&token=fabd5888-0ba8-4b5b-9fe6-59eb62a5005f',
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/shrimp_product_page%2Fshrimp2.png?alt=media&token=564088fa-0dab-463c-8c3a-db17c0e7c45e',
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/shrimp_product_page%2Fshrimp3.png?alt=media&token=3faa8e86-92b3-4940-a136-8a8967f370e8',
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/shrimp_product_page%2Fshrimp4.png?alt=media&token=26993bda-d200-4cb6-8192-a7b1cc002c4d',
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/shrimp_product_page%2Fshrimp5.png?alt=media&token=456f6a5d-425e-4798-ada4-3f7e320a84b5'
   ];
 
   @override

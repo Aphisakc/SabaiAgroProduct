@@ -1,15 +1,12 @@
 import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'package:sabai_agro_product/models/product_model.dart';
 import 'package:sabai_agro_product/utility/my_constant.dart';
 
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
 
 class DetailProductWidget extends StatefulWidget {
   final ProductModel productModel;
