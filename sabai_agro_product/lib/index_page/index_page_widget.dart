@@ -4,16 +4,12 @@ import 'package:sabai_agro_product/carousel_page/carousel_shrimp.dart';
 import 'package:sabai_agro_product/contact_page/contact_page_widget.dart';
 import 'package:sabai_agro_product/widgets/product_page_widget.dart';
 import 'package:sabai_agro_product/home_page/home_page_widget.dart';
-import 'package:sabai_agro_product/shrimp_product_page/shrimp_product_page_widget.dart';
 import 'package:sabai_agro_product/utility/my_constant.dart';
 
 import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../main.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class IndexPageWidget extends StatefulWidget {
   IndexPageWidget({Key key}) : super(key: key);
@@ -138,16 +134,7 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                             children: [
                                               Text(
                                                 'SABAI AGRO',
-                                                style: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
-                                                  fontFamily: 'PLSPRO001',
-                                                  color: FlutterFlowTheme
-                                                      .tertiaryColor,
-                                                  fontSize: 40,
-                                                  fontWeight: FontWeight.w500,
-                                                  useGoogleFonts: false,
-                                                ),
+                                                style: MyConstant().h6Style(),
                                               )
                                             ],
                                           ),
@@ -166,15 +153,8 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                                   children: [
                                                     Text(
                                                       'บริษัท สบาย อะโกร บิสซินเนส แอนด์ อินโนเวชั่น จำกัด',
-                                                      style: FlutterFlowTheme
-                                                          .bodyText1
-                                                          .override(
-                                                        fontFamily: 'PLSPRO001',
-                                                        color: FlutterFlowTheme
-                                                            .tertiaryColor,
-                                                        fontSize: 15,
-                                                        useGoogleFonts: false,
-                                                      ),
+                                                      style: MyConstant()
+                                                          .h5Style(),
                                                     )
                                                   ],
                                                 ),
@@ -212,17 +192,8 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                                       .fromSTEB(0, 5, 0, 0),
                                                   child: Text(
                                                     'WE WILL GROW TOGETHER',
-                                                    style: FlutterFlowTheme
-                                                        .bodyText1
-                                                        .override(
-                                                      fontFamily: 'PLSPRO001',
-                                                      color: FlutterFlowTheme
-                                                          .tertiaryColor,
-                                                      fontSize: 20,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      useGoogleFonts: false,
-                                                    ),
+                                                    style:
+                                                        MyConstant().h3Style(),
                                                   ),
                                                 ),
                                               )
@@ -247,12 +218,7 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                           padding: EdgeInsetsDirectional.fromSTEB(16, 20, 0, 0),
                           child: Text(
                             'ผลิตภัณฑ์คุณภาพ คู่เกษตรกรไทย',
-                            style: FlutterFlowTheme.subtitle2.override(
-                              fontFamily: 'PLSPRO001',
-                              color: FlutterFlowTheme.tertiaryColor,
-                              fontSize: 15,
-                              useGoogleFonts: false,
-                            ),
+                            style: MyConstant().h3Style(),
                           ),
                         )
                       ],
@@ -267,7 +233,7 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                 EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                             child: Text(
                               'เติบโตไปด้วยกัน',
-                              style: MyConstant().h1Style(),
+                              style: MyConstant().h4Style(),
                             ),
                           )
                         ],
@@ -335,11 +301,7 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                       ),
                                       Text(
                                         'Home',
-                                        style: FlutterFlowTheme.bodyText1
-                                            .override(
-                                                fontFamily: 'PLSPRO001',
-                                                useGoogleFonts: false,
-                                                fontSize: 20),
+                                        style: MyConstant().h7Style(),
                                       )
                                     ],
                                   ),
@@ -353,7 +315,8 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                   MaterialPageRoute(
                                     builder: (context) => ProductPageWidget(
                                       collectionFirebase: 'fish_product',
-                                      titleGroup: 'กลุ่มสินค้าปลา', carouselWidget: CarouselFishPage(),
+                                      titleGroup: 'กลุ่มสินค้าปลา',
+                                      carouselWidget: CarouselFishPage(),
                                     ),
                                   ),
                                 );
@@ -369,7 +332,8 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                       MaterialPageRoute(
                                         builder: (context) => ProductPageWidget(
                                           collectionFirebase: 'fish_product',
-                                          titleGroup: 'กลุ่มสินค้าปลา',carouselWidget: CarouselFishPage(),
+                                          titleGroup: 'กลุ่มสินค้าปลา',
+                                          carouselWidget: CarouselFishPage(),
                                         ),
                                       ),
                                     );
@@ -385,11 +349,7 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                       ),
                                       Text(
                                         'กลุ่มสินค้าปลา',
-                                        style: FlutterFlowTheme.bodyText1
-                                            .override(
-                                                fontFamily: 'PLSPRO001',
-                                                useGoogleFonts: false,
-                                                fontSize: 20),
+                                        style: MyConstant().h7Style(),
                                       )
                                     ],
                                   ),
@@ -403,7 +363,8 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                   MaterialPageRoute(
                                     builder: (context) => ProductPageWidget(
                                       collectionFirebase: 'shrimp_product',
-                                      titleGroup: 'กลุ่มสินค้ากุ้ง', carouselWidget: CarouselShrimpPage(),
+                                      titleGroup: 'กลุ่มสินค้ากุ้ง',
+                                      carouselWidget: CarouselShrimpPage(),
                                     ),
                                   ),
                                 );
@@ -419,7 +380,8 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                       MaterialPageRoute(
                                         builder: (context) => ProductPageWidget(
                                           collectionFirebase: 'shrimp_product',
-                                          titleGroup: 'กลุ่มสินค้ากุ้ง', carouselWidget: CarouselShrimpPage(),
+                                          titleGroup: 'กลุ่มสินค้ากุ้ง',
+                                          carouselWidget: CarouselShrimpPage(),
                                         ),
                                       ),
                                     );
@@ -435,11 +397,7 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                       ),
                                       Text(
                                         'กลุ่มสินค้ากุ้ง',
-                                        style: FlutterFlowTheme.bodyText1
-                                            .override(
-                                                fontFamily: 'PLSPRO001',
-                                                useGoogleFonts: false,
-                                                fontSize: 20),
+                                        style: MyConstant().h7Style(),
                                       )
                                     ],
                                   ),
@@ -469,10 +427,7 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                   ),
                                   Text(
                                     'โรคสัตว์น้ำ',
-                                    style: FlutterFlowTheme.bodyText1.override(
-                                        fontFamily: 'PLSPRO001',
-                                        useGoogleFonts: false,
-                                        fontSize: 20),
+                                    style: MyConstant().h7Style(),
                                   )
                                 ],
                               ),
@@ -491,10 +446,7 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                   ),
                                   Text(
                                     'โปรแกรมคำนวณ',
-                                    style: FlutterFlowTheme.bodyText1.override(
-                                        fontFamily: 'PLSPRO001',
-                                        useGoogleFonts: false,
-                                        fontSize: 20),
+                                    style: MyConstant().h7Style(),
                                   )
                                 ],
                               ),
@@ -532,11 +484,7 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                       ),
                                       Text(
                                         'ติดต่อเรา',
-                                        style: FlutterFlowTheme.bodyText1
-                                            .override(
-                                                fontFamily: 'PLSPRO001',
-                                                useGoogleFonts: false,
-                                                fontSize: 20),
+                                        style: MyConstant().h7Style(),
                                       )
                                     ],
                                   ),

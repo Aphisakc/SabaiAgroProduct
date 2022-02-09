@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:sabai_agro_product/detail_product/detail_product_widget.dart';
-import 'package:sabai_agro_product/flutter_flow/flutter_flow_theme.dart';
 import 'package:sabai_agro_product/models/product_model.dart';
 import 'package:sabai_agro_product/utility/my_constant.dart';
 
@@ -43,7 +42,7 @@ class ShowListProduct extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           height: 120,
           decoration: BoxDecoration(
-            color: index % 2 == 0 ? Colors.white : Colors.grey,
+            color: index % 2 == 0 ? Colors.white : Colors.grey[300],
           ),
           child: InkWell(
             onTap: () async {
@@ -65,8 +64,8 @@ class ShowListProduct extends StatelessWidget {
                       height: 120,
                       decoration: BoxDecoration(
                         color: index % 2 == 0
-                            ? MyConstant.primaryDarkColor
-                            : MyConstant.primaryLightColor,
+                            ? MyConstant.listviewDarkColor
+                            : MyConstant.listviewLightColor,
                       ),
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
@@ -76,8 +75,8 @@ class ShowListProduct extends StatelessWidget {
                             Image.network(
                               urlImage,
                               width: 100,
-                              height: 110,
-                              fit: BoxFit.cover,
+                              height: 105,
+                              fit: BoxFit.contain,
                             ),
                             Column(
                               mainAxisSize: MainAxisSize.max,
@@ -91,7 +90,7 @@ class ShowListProduct extends StatelessWidget {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 10, 10, 0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -107,11 +106,7 @@ class ShowListProduct extends StatelessWidget {
                           padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                           child: Text(
                             detailsProduct,
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'PLSPRO001',
-                              fontSize: 16,
-                              useGoogleFonts: false,
-                            ),
+                            style: MyConstant().h8StyleShowlist(),
                           ),
                         )
                       ],
