@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../utility/my_constant.dart';
+
 class WelcomePageWidget extends StatefulWidget {
   const WelcomePageWidget({Key key}) : super(key: key);
 
@@ -79,30 +81,22 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                           children: [
                             Text(
                               'Sabai Agro Business & Innovation company',
-                              style: FlutterFlowTheme.subtitle2.override(
-                                fontFamily: 'PLSPRO001',
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w500,
-                                useGoogleFonts: false,
-                              ),
+                              style: MyConstant().h2Style(),
                             )
                           ],
                         ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'บริษัท สบาย อะโกร บิสซินเนส แอนด์ อินโนเวชั่น จำกัด',
-                              style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'PLSPRO001',
-                                color: FlutterFlowTheme.tertiaryColor,
-                                fontWeight: FontWeight.w500,
-                                useGoogleFonts: false,
-                              ),
-                            )
-                          ],
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'บริษัท สบาย อะโกร บิสซินเนส แอนด์ อินโนเวชั่น จำกัด',
+                                style: MyConstant().h5Style(),
+                              )
+                            ],
+                          ),
                         )
                       ],
                     ),
@@ -152,13 +146,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                         Text(
                           'WE WILL GROW TOGETHER',
                           textAlign: TextAlign.center,
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'PLSPRO001',
-                            color: FlutterFlowTheme.tertiaryColor,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                            useGoogleFonts: false,
-                          ),
+                          style: MyConstant().h2Style(),
                         )
                       ],
                     ),

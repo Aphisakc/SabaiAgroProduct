@@ -42,7 +42,7 @@ class MyConstant {
         color: tertiaryColor,
         fontWeight: FontWeight.normal,
       ));
-  TextStyle h4Style() => GoogleFonts.ibmPlexSansThai(
+  TextStyle h4Style() => GoogleFonts.firaSans(
           textStyle: TextStyle(
         fontSize: 20,
         color: tertiaryColor,
@@ -71,5 +71,17 @@ class MyConstant {
         fontSize: 14,
         color: secondaryColor,
         fontWeight: FontWeight.normal,
-      ));                        
+      ));   
+  TextStyle h9Style() => GoogleFonts.ibmPlexSansThai(
+          textStyle: TextStyle(
+        fontSize: 9.2,
+        color: tertiaryColor,
+        fontWeight: FontWeight.normal,
+      ));     
+  TextStyle h10Style() => GoogleFonts.firaSans(
+          textStyle: TextStyle(
+        fontSize: 30,
+        color: tertiaryColor,
+        fontWeight: FontWeight.w400,     
+        ));                     
 }

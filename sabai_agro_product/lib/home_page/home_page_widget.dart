@@ -1,9 +1,8 @@
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
+import '../utility/my_constant.dart';
 
 class HomePageWidget extends StatefulWidget {
   HomePageWidget({Key key}) : super(key: key);
@@ -13,9 +12,6 @@ class HomePageWidget extends StatefulWidget {
 }
 
 class _HomePageWidgetState extends State<HomePageWidget> {
-  bool _loadingButton1 = false;
-  bool _loadingButton2 = false;
-  bool _loadingButton3 = false;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -23,36 +19,26 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
+        title: Row(
+          children: [
+            Text('Home', style: MyConstant().h2Style()),
+          ],
+        ),
         backgroundColor: Color(0xFF039BE5),
         automaticallyImplyLeading: true,
-        leading: Row(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            FlutterFlowIconButton(
-              borderColor: Colors.transparent,
-              borderRadius: 30,
-              borderWidth: 1,
-              buttonSize: 60,
-              icon: Icon(
-                Icons.arrow_back_ios,
-                color: FlutterFlowTheme.tertiaryColor,
-                size: 30,
-              ),
-              onPressed: () async {
-                Navigator.pop(context);
-              },
-            ),
-            Text(
-              'Home',
-              style: FlutterFlowTheme.bodyText1.override(
-                fontFamily: 'PLSPRO001',
-                color: FlutterFlowTheme.tertiaryColor,
-                fontSize: 20,
-                fontWeight: FontWeight.w500,
-                useGoogleFonts: false,
-              ),
-            )
-          ],
+        leading: FlutterFlowIconButton(
+          borderColor: Colors.transparent,
+          borderRadius: 30,
+          borderWidth: 1,
+          buttonSize: 60,
+          icon: Icon(
+            Icons.arrow_back_ios,
+            color: FlutterFlowTheme.tertiaryColor,
+            size: 30,
+          ),
+          onPressed: () async {
+            Navigator.pop(context);
+          },
         ),
         actions: [],
         centerTitle: true,
@@ -104,7 +90,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           children: [
                             Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(16, 16, 16, 0),
+                                  EdgeInsetsDirectional.fromSTEB(5, 16, 16, 0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -133,106 +119,27 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Text(
-                                                  'SABAI AGRO',
-                                                  style: FlutterFlowTheme
-                                                      .bodyText1
-                                                      .override(
-                                                    fontFamily: 'PLSPRO001',
-                                                    color: FlutterFlowTheme
-                                                        .tertiaryColor,
-                                                    fontSize: 40,
-                                                    fontWeight: FontWeight.w500,
-                                                    useGoogleFonts: false,
-                                                  ),
-                                                )
-                                              ],
-                                            ),
-                                            Align(
-                                              alignment:
-                                                  AlignmentDirectional(0, 0),
-                                              child: Stack(
-                                                alignment:
-                                                    AlignmentDirectional(0, 0),
+                                            Padding(
+                                              padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Text(
-                                                        'บริษัท สบาย อะโกร บิสซินเนส แอนด์ อินโนเวชั่น จำกัด',
-                                                        style: FlutterFlowTheme
-                                                            .bodyText1
-                                                            .override(
-                                                          fontFamily:
-                                                              'PLSPRO001',
-                                                          color: FlutterFlowTheme
-                                                              .tertiaryColor,
-                                                          fontSize: 15,
-                                                          useGoogleFonts: false,
-                                                        ),
-                                                      )
-                                                    ],
-                                                  ),
-                                                  Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            -1.11, 0),
-                                                    child: Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0, 20, 0, 0),
-                                                      child: Text(
-                                                        '_________________________________________',
-                                                        style: FlutterFlowTheme
-                                                            .bodyText1
-                                                            .override(
-                                                          fontFamily: 'Lato',
-                                                          color: Colors.white,
-                                                        ),
-                                                      ),
-                                                    ),
+                                                  Text(
+                                                    'SABAI AGRO',
+                                                    style: MyConstant().h10Style(),
                                                   )
                                                 ],
                                               ),
                                             ),
-                                            Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          0, 0),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 5, 0, 0),
-                                                    child: Text(
-                                                      'WE WILL GROW TOGETHER',
-                                                      style: FlutterFlowTheme
-                                                          .bodyText1
-                                                          .override(
-                                                        fontFamily: 'PLSPRO001',
-                                                        color: FlutterFlowTheme
-                                                            .tertiaryColor,
-                                                        fontSize: 20,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        useGoogleFonts: false,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                )
-                                              ],
-                                            )
+                                            Padding(
+                                              padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                                              child: Text(
+                                                'บริษัท สบาย อะโกร บิสซินเนส แอนด์ อินโนเวชั่น จำกัด',
+                                                style: MyConstant()
+                                                    .h5Style(),
+                                              ),
+                                            ),
+                                            
                                           ],
                                         )
                                       ],
@@ -251,14 +158,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                             child: Text(
-                              'ผลิตภัณฑ์คุณภาพ คู่เกษตรกรไทย',
-                              style: FlutterFlowTheme.subtitle2.override(
-                                fontFamily: 'PLSPRO001',
-                                color: FlutterFlowTheme.tertiaryColor,
-                                fontSize: 15,
-                                useGoogleFonts: false,
-                              ),
-                            ),
+                              'WE WILL GROW TOGETHER',
+                              style: MyConstant().h4Style(),
+                          ),
                           )
                         ],
                       ),
@@ -271,12 +173,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                               child: Text(
-                                'เติบโตไปด้วยกัน',
-                                style: FlutterFlowTheme.title3.override(
-                                  fontFamily: 'PLSPRO001',
-                                  color: FlutterFlowTheme.tertiaryColor,
-                                  useGoogleFonts: false,
-                                ),
+                                'SABAI AGRO BUSINESS & INNOVATION COMPANY LIMITED',
+                                style: MyConstant().h9Style(),
                               ),
                             )
                           ],
@@ -318,8 +216,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     children: [
                                       Image.asset(
                                         'assets/images/vision.png',
-                                        width: 180,
-                                        height: 70,
+                                        width: 150,
+                                        height: 50,
                                         fit: BoxFit.contain,
                                       )
                                     ],
@@ -344,14 +242,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             },
                                             child: Text(
                                               'เป็นบริษัทธรรมาภิบาลทางการเกษตรชั้นนำของไทยที่ประกอบด้วยบุคลากรที่เป็นคนดีคนเก่งมีความมุ่งมั่นใส่ใจและอุทิศตนในการส่งมอบปัจจัยการผลิตสู่พี่น้องเกษตรกรบนรากฐานของผลิตภัณฑ์ที่มีคุณภาพและนวัตกรรมระดับโลกรวมทั้งการให้การบริการทางวิชาการ',
-                                              textAlign: TextAlign.justify,
-                                              style: FlutterFlowTheme.bodyText1
-                                                  .override(
-                                                fontFamily: 'PLSPRO001',
-                                                fontSize: 18,
-                                                fontWeight: FontWeight.w500,
-                                                useGoogleFonts: false,
-                                              ),
+                                              style: MyConstant().h8StyleShowlist(),
                                             ),
                                           ),
                                         )
@@ -378,8 +269,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     children: [
                                       Image.asset(
                                         'assets/images/relate.png',
-                                        width: 180,
-                                        height: 70,
+                                        width: 150,
+                                        height: 50,
                                         fit: BoxFit.contain,
                                       )
                                     ],
@@ -400,14 +291,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         Expanded(
                                           child: Text(
                                             'เรามุ่งมั่นตั้งใจและใส่ใจในการทำงานเพื่อให้เกษตรกรไทยสามารถพัฒนาผลผลิตและผลกำไรให้มากขึ้นสามารถอยู่รอดเข้มเเข็งได้มากขึ้นและเจริญรุ่งเรืองได้อย่างยั่งยืนเพราะเรามีความเชื่อว่าความเจริญรุ่งเรืองอย่างยั่งยืนของเกษตรกรคือความเจริญรุ่งเรืองของบริษัทสบายอะโกรเช่นกัน',
-                                            textAlign: TextAlign.justify,
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w500,
-                                              useGoogleFonts: false,
-                                            ),
+                                            style: MyConstant().h8StyleShowlist(),
                                           ),
                                         )
                                       ],
@@ -428,14 +312,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 16, 16, 0),
+                                      0, 0, 16, 0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Image.asset(
                                         'assets/images/target.png',
-                                        width: 250,
-                                        height: 70,
+                                        width: 180,
+                                        height:90,
                                         fit: BoxFit.contain,
                                       )
                                     ],
@@ -445,7 +329,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   alignment: AlignmentDirectional(0, 0),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        16, 0, 0, 16),
+                                        16, 0, 0, 0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -478,15 +362,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     decoration: BoxDecoration(),
                                                     child: Text(
                                                       '1. เพื่อการพัฒนาผลผลิตและผลกำไรของเกษตรกรอย่างยั่งยืน ',
-                                                      style: FlutterFlowTheme
-                                                          .bodyText1
-                                                          .override(
-                                                        fontFamily: 'PLSPRO001',
-                                                        fontSize: 18,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        useGoogleFonts: false,
-                                                      ),
+                                                      style: MyConstant().h8StyleShowlist(),
                                                     ),
                                                   )
                                                 ],
@@ -503,15 +379,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     decoration: BoxDecoration(),
                                                     child: Text(
                                                       '2. เพื่อการพัฒนาผลประกอบการที่มีผลกำไรอย่างยั่งยืน',
-                                                      style: FlutterFlowTheme
-                                                          .bodyText1
-                                                          .override(
-                                                        fontFamily: 'PLSPRO001',
-                                                        fontSize: 18,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        useGoogleFonts: false,
-                                                      ),
+                                                      style: MyConstant().h8StyleShowlist(),
                                                     ),
                                                   )
                                                 ],
@@ -536,19 +404,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                   0, 10, 0, 0),
                                                       child: Text(
                                                         'เพราะความสำเร็จอย่างยั่งยืนของเกษตรกรคือความสำเร็จอย่างยั่งยืนของบริษัทสบาย อะโกร ด้วยเช่นกัน',
-                                                        style: FlutterFlowTheme
-                                                            .bodyText1
-                                                            .override(
-                                                          fontFamily:
-                                                              'PLSPRO001',
-                                                          color:
-                                                              FlutterFlowTheme
-                                                                  .primaryColor,
-                                                          fontSize: 18,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                          useGoogleFonts: false,
-                                                        ),
+                                                        style: MyConstant().h2blueStyle(),
                                                       ),
                                                     ),
                                                   )
