@@ -93,7 +93,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                             children: [
                               Text(
                                 'บริษัท สบาย อะโกร บิสซินเนส แอนด์ อินโนเวชั่น จำกัด',
-                                style: MyConstant().h5Style(),
+                                style: MyConstant().h3Style(),
                               )
                             ],
                           ),

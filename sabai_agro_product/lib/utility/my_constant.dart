@@ -87,6 +87,8 @@ class MyConstant {
         color: tertiaryColor,
         fontWeight: FontWeight.normal,
       )); 
+
+    
   TextStyle h6Style() => GoogleFonts.ibmPlexSansThai(
           textStyle: TextStyle(
         fontSize: 25,

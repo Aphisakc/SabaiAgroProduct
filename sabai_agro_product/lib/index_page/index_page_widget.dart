@@ -232,7 +232,7 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                             child: Text(
-                              'เติบโตไปด้วยกัน',
+                              'เติบโตให้แตกต่าง',
                               style: MyConstant().th4Style(),
                             ),
                           )
