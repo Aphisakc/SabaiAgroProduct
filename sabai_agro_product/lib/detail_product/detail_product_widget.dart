@@ -96,7 +96,7 @@ class _DetailProductWidgetState extends State<DetailProductWidget> {
                     image: DecorationImage(
                       fit: BoxFit.cover,
                       image: Image.network(
-                        'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2Fbg_cont.jpg?alt=media&token=8ee66d95-7459-4091-aea2-556f644b2e49',
+                        'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/fish_product_page%2Fbg03.png?alt=media&token=f4cd132c-7b00-471e-9a90-99a22cdf8c57',
                       ).image,
                     ),
                   ),
@@ -124,15 +124,7 @@ class _DetailProductWidgetState extends State<DetailProductWidget> {
                                       children: [
                                         Text(
                                           'SABAI AGRO',
-                                          style: FlutterFlowTheme.bodyText1
-                                              .override(
-                                            fontFamily: 'PLSPRO001',
-                                            color:
-                                                FlutterFlowTheme.tertiaryColor,
-                                            fontSize: 30,
-                                            fontWeight: FontWeight.w500,
-                                            useGoogleFonts: false,
-                                          ),
+                                          style: MyConstant().h10Style(),
                                         )
                                       ],
                                     ),
@@ -148,27 +140,24 @@ class _DetailProductWidgetState extends State<DetailProductWidget> {
                                             children: [
                                               Text(
                                                 'บริษัท สบาย อะโกร บิสซินเนส แอนด์ อินโนเวชั่น จำกัด',
-                                                style: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
-                                                  fontFamily: 'PLSPRO001',
-                                                  color: FlutterFlowTheme
-                                                      .tertiaryColor,
-                                                  fontSize: 15,
-                                                  useGoogleFonts: false,
+                                                style: MyConstant().h5Style(),
                                                 ),
-                                              )
+                                              
                                             ],
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(-1.11, 0),
-                                            child: Text(
-                                              '_________________________________________',
-                                              style: FlutterFlowTheme.bodyText1
-                                                  .override(
-                                                fontFamily: 'Lato',
-                                                color: Colors.white,
+                                                AlignmentDirectional(0, 0),
+                                            child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 10, 0, 0),
+                                              child: Text(
+                                                '_________________________________________',
+                                                style: FlutterFlowTheme.bodyText1
+                                                    .override(
+                                                  fontFamily: 'Lato',
+                                                  color: Colors.white,
+                                                ),
                                               ),
                                             ),
                                           )
@@ -178,8 +167,8 @@ class _DetailProductWidgetState extends State<DetailProductWidget> {
                                   ],
                                 ),
                                 Container(
-                                  width: 50,
-                                  height: 50,
+                                  width: 40,
+                                  height: 40,
                                   decoration: BoxDecoration(
                                     color: Color(0xAEFFFFFF),
                                     shape: BoxShape.circle,
@@ -187,8 +176,8 @@ class _DetailProductWidgetState extends State<DetailProductWidget> {
                                   child: Align(
                                     alignment: AlignmentDirectional(0, 0),
                                     child: SizedBox(
-                                      // width: 30,
-                                      // height: 30,
+                                      width: 40,
+                                      height: 40,
                                       child:
                                           Image.asset('assets/images/logo.png'),
                                     ),
@@ -239,17 +228,7 @@ class _DetailProductWidgetState extends State<DetailProductWidget> {
                                                   decoration: BoxDecoration(),
                                                   child: Text(
                                                     productModel.name,
-                                                    style: FlutterFlowTheme
-                                                        .bodyText1
-                                                        .override(
-                                                      fontFamily: 'PLSPRO001',
-                                                      color: FlutterFlowTheme
-                                                          .tertiaryColor,
-                                                      fontSize: 40,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      useGoogleFonts: false,
-                                                    ),
+                                                    style: MyConstant().th5Style(),
                                                   ),
                                                 )
                                               ],
@@ -275,17 +254,7 @@ class _DetailProductWidgetState extends State<DetailProductWidget> {
                                                     decoration: BoxDecoration(),
                                                     child: AutoSizeText(
                                                       productModel.details,
-                                                      style: FlutterFlowTheme
-                                                          .bodyText1
-                                                          .override(
-                                                        fontFamily: 'PLSPRO001',
-                                                        color: FlutterFlowTheme
-                                                            .tertiaryColor,
-                                                        fontSize: 20,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        useGoogleFonts: false,
-                                                      ),
+                                                      style: MyConstant().h3Style(),
                                                     ),
                                                   ),
                                                 )
@@ -313,8 +282,8 @@ class _DetailProductWidgetState extends State<DetailProductWidget> {
                                         children: [
                                           Image.network(
                                             productModel.pic,
-                                            width: 100,
-                                            height: 100,
+                                            width: 120,
+                                            height: 120,
                                             fit: BoxFit.contain,
                                           ),
                                           // Text(

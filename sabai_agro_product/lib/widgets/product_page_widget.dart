@@ -12,12 +12,14 @@ class ProductPageWidget extends StatefulWidget {
   final String collectionFirebase;
   final String titleGroup;
   final Widget carouselWidget;
+  final Widget iconWidget;
 
   ProductPageWidget({
     Key key,
     @required this.collectionFirebase,
     @required this.titleGroup,
     @required this.carouselWidget,
+    @required this.iconWidget,
   }) : super(key: key);
 
   @override
@@ -32,6 +34,7 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
   String collectionFirebase;
   String titlegroup;
   Widget carouselWidget;
+  Widget iconWidget;
 
   @override
   void initState() {
@@ -39,7 +42,9 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
 
     collectionFirebase = widget.collectionFirebase;
     titlegroup = widget.titleGroup;
+    // titlegroup = 'กลุ่มผลิตภัณฑ์ สำหรับปลา';
     carouselWidget = widget.carouselWidget;
+    iconWidget = widget.iconWidget;
 
     readFishProduct();
   }
@@ -225,12 +230,8 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
                           // color: Color(0xAEFFFFFF),
                           shape: BoxShape.circle,
                         ),
-                        child: Image.asset(
-                          'assets/images/icon_fish.png',
-                          width: 60,
-                          height: 60,
-                          fit: BoxFit.contain,
-                        ),
+                        child: iconWidget,
+                          
                       ),
                     ],
                   ),

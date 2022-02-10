@@ -258,8 +258,8 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
@@ -317,6 +317,7 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                       collectionFirebase: 'fish_product',
                                       titleGroup: 'กลุ่มสินค้าปลา',
                                       carouselWidget: CarouselFishPage(),
+                                      iconWidget: Image.network('https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FiconPic%2FMenu%20Icon_02.png?alt=media&token=c54e9668-4cc9-4618-b188-e10f484cbbf6'),
                                     ),
                                   ),
                                 );
@@ -334,6 +335,7 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                           collectionFirebase: 'fish_product',
                                           titleGroup: 'กลุ่มสินค้าปลา',
                                           carouselWidget: CarouselFishPage(),
+                                          iconWidget: Image.network('https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FiconPic%2FMenu%20Icon_02.png?alt=media&token=c54e9668-4cc9-4618-b188-e10f484cbbf6'),
                                         ),
                                       ),
                                     );
@@ -365,6 +367,7 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                       collectionFirebase: 'shrimp_product',
                                       titleGroup: 'กลุ่มสินค้ากุ้ง',
                                       carouselWidget: CarouselShrimpPage(),
+                                      iconWidget: Image.network('https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FiconPic%2FMenu%20Icon_03.png?alt=media&token=d6619658-5e17-4f4d-9898-c019244f7f85'),
                                     ),
                                   ),
                                 );
@@ -382,6 +385,7 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                           collectionFirebase: 'shrimp_product',
                                           titleGroup: 'กลุ่มสินค้ากุ้ง',
                                           carouselWidget: CarouselShrimpPage(),
+                                          iconWidget: Image.network('https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FiconPic%2FMenu%20Icon_03.png?alt=media&token=d6619658-5e17-4f4d-9898-c019244f7f85'),
                                         ),
                                       ),
                                     );
