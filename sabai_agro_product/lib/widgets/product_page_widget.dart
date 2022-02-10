@@ -123,7 +123,8 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
                                         nameProduct: productModels[index].name,
                                         detailsProduct:
                                             productModels[index].details,
-                                        index: index, productModel: productModels[index],
+                                        index: index,
+                                        productModel: productModels[index],
                                       ),
                                     ),
                             ),
@@ -149,7 +150,7 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
         image: DecorationImage(
           fit: BoxFit.cover,
           image: Image.network(
-            'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/all_product_page%2Fbg_all.jpg?alt=media&token=d21ad2ed-14f9-4727-8e02-af453af0f50c',
+            'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/fish_product_page%2Fbg03.png?alt=media&token=f4cd132c-7b00-471e-9a90-99a22cdf8c57',
           ).image,
         ),
       ),
@@ -162,7 +163,7 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 10, 16, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -178,13 +179,7 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
                             children: [
                               Text(
                                 'SABAI AGRO',
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'PLSPRO001',
-                                  color: FlutterFlowTheme.tertiaryColor,
-                                  fontSize: 35,
-                                  fontWeight: FontWeight.w500,
-                                  useGoogleFonts: false,
-                                ),
+                                style: MyConstant().h10Style(),
                               )
                             ],
                           ),
@@ -199,21 +194,15 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
                                   children: [
                                     Text(
                                       'บริษัท สบาย อะโกร บิสซินเนส แอนด์ อินโนเวชั่น จำกัด',
-                                      style:
-                                          FlutterFlowTheme.bodyText1.override(
-                                        fontFamily: 'PLSPRO001',
-                                        color: FlutterFlowTheme.tertiaryColor,
-                                        fontSize: 15,
-                                        useGoogleFonts: false,
-                                      ),
+                                      style: MyConstant().h5Style(),
                                     )
                                   ],
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(-1.11, 0),
+                                  alignment: AlignmentDirectional(0, 0),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 20, 0, 0),
+                                        0, 10, 0, 0),
                                     child: Text(
                                       '_________________________________________',
                                       style:
@@ -230,16 +219,16 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
                         ],
                       ),
                       Container(
-                        width: 75,
-                        height: 75,
+                        width: 60,
+                        height: 60,
                         decoration: BoxDecoration(
                           // color: Color(0xAEFFFFFF),
                           shape: BoxShape.circle,
                         ),
                         child: Image.asset(
                           'assets/images/icon_fish.png',
-                          width: 100,
-                          height: 100,
+                          width: 60,
+                          height: 60,
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -253,27 +242,20 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
                     children: [
                       Text(
                         titlegroup,
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'PLSPRO001',
-                          color: FlutterFlowTheme.tertiaryColor,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                          useGoogleFonts: false,
-                        ),
+                        style: MyConstant().th4Style(),
                       )
                     ],
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                   child: Container(
                       width: MediaQuery.of(context).size.width,
-                      height: 100,
+                      height: 120,
                       decoration: BoxDecoration(
                         color: Color(0x00EEEEEE),
                       ),
-                      child: carouselWidget
-                      ),
+                      child: carouselWidget),
                 )
               ],
             )
@@ -284,14 +266,12 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
   }
 
   AppBar newAppBar(BuildContext context) {
-    return AppBar(title: Row(
-      children: [
-        Text(
-                titlegroup,
-                style: MyConstant().h2Style()
-              ),
-      ],
-    ),
+    return AppBar(
+      title: Row(
+        children: [
+          Text(titlegroup, style: MyConstant().h2Style()),
+        ],
+      ),
       backgroundColor: Color(0xFF039BE5),
       automaticallyImplyLeading: true,
       leading: FlutterFlowIconButton(

@@ -24,10 +24,17 @@ class MyConstant {
 
   TextStyle h2Style() => GoogleFonts.ibmPlexSansThai(
           textStyle: TextStyle(
-        fontSize: 14,
+        fontSize: 16,
         color: tertiaryColor,
         fontWeight: FontWeight.w500,
       ));
+
+  TextStyle h23Style() => GoogleFonts.firaSans(
+          textStyle: TextStyle(
+        fontSize: 16,
+        color: tertiaryColor,
+        fontWeight: FontWeight.w500,
+      ));    
 
   TextStyle h2blueStyle() => GoogleFonts.ibmPlexSansThai(
           textStyle: TextStyle(
@@ -36,18 +43,37 @@ class MyConstant {
         fontWeight: FontWeight.w500,
       ));
 
+  TextStyle en2blueStyle() => GoogleFonts.ibmPlexSansThai(
+          textStyle: TextStyle(
+        fontSize: 14,
+        color: primaryColor,
+        fontWeight: FontWeight.w500,
+      ));    
+
   TextStyle h3Style() => GoogleFonts.ibmPlexSansThai(
           textStyle: TextStyle(
         fontSize: 14,
         color: tertiaryColor,
         fontWeight: FontWeight.normal,
       ));
+  TextStyle h31Style() => GoogleFonts.firaSans(
+          textStyle: TextStyle(
+        fontSize: 14,
+        color: tertiaryColor,
+        fontWeight: FontWeight.normal,
+      ));    
   TextStyle h4Style() => GoogleFonts.firaSans(
           textStyle: TextStyle(
         fontSize: 20,
         color: tertiaryColor,
         fontWeight: FontWeight.normal,
       ));
+  TextStyle th4Style() => GoogleFonts.ibmPlexSansThai(
+          textStyle: TextStyle(
+        fontSize: 20,
+        color: tertiaryColor,
+        fontWeight: FontWeight.normal,
+      ));    
   TextStyle h5Style() => GoogleFonts.ibmPlexSansThai(
           textStyle: TextStyle(
         fontSize: 10.5,

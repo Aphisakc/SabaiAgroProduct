@@ -27,7 +27,7 @@ class _CarouselPageState extends State<CarouselShrimpPage> {
         children: [
           CarouselSlider(
             options: CarouselOptions(
-                height: 100,
+                height: 120,
                 autoPlay: true,
                 aspectRatio: 16 / 9,
                 viewportFraction: 0.4,
@@ -75,25 +75,25 @@ class _CarouselPageState extends State<CarouselShrimpPage> {
                     ))
                 .toList(),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: imgList.asMap().entries.map((entry) {
-              return GestureDetector(
-                onTap: () => _controller.animateToPage(entry.key),
-                child: Container(
-                  width: 5.0,
-                  height: 5.0,
-                  // margin: EdgeInsets.symmetric(vertical: 4.0, horizontal: 2.0),
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: (Theme.of(context).brightness == Brightness.dark
-                              ? Colors.red
-                              : Colors.white)
-                          .withOpacity(_current == entry.key ? 0.9 : 0.4)),
-                ),
-              );
-            }).toList(),
-          ),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.center,
+          //   children: imgList.asMap().entries.map((entry) {
+          //     return GestureDetector(
+          //       onTap: () => _controller.animateToPage(entry.key),
+          //       child: Container(
+          //         width: 5.0,
+          //         height: 5.0,
+          //         // margin: EdgeInsets.symmetric(vertical: 4.0, horizontal: 2.0),
+          //         decoration: BoxDecoration(
+          //             shape: BoxShape.circle,
+          //             color: (Theme.of(context).brightness == Brightness.dark
+          //                     ? Colors.red
+          //                     : Colors.white)
+          //                 .withOpacity(_current == entry.key ? 0.9 : 0.4)),
+          //       ),
+          //     );
+          //   }).toList(),
+          // ),
         ],
       ),
     );

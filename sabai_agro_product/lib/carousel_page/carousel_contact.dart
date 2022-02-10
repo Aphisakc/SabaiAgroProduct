@@ -13,13 +13,13 @@ class _CarouselPageState extends State<CarouselContactPage> {
   final CarouselController _controller = CarouselController();
 
   final List<String> imgList = [
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2F%E0%B8%9E%E0%B8%B5%E0%B9%88%E0%B9%81%E0%B8%A1%E0%B9%89%E0%B8%A7_2.jpg?alt=media&token=f6c21b4c-49ef-4fb5-b3bf-2882ca138885',
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIMG_0258.JPG?alt=media&token=b54eafe3-f950-43f7-90a2-c4a83d46e0d3',
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIMG_0220.JPG?alt=media&token=e4f2a14e-0646-470c-8b42-8f2612401dd1',
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIMG_0238.JPG?alt=media&token=a6c2ee85-2380-4355-a9e9-8c647e9cb41d',
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIMG_0725.JPG?alt=media&token=3aa96b32-7dec-42f8-9dc6-aaec6f12e03b',
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIMG_0245.JPG?alt=media&token=c8723473-5515-42b1-b6f2-f3f15fa7f44f',
-    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIMG_0211.JPG?alt=media&token=77d1130a-0b43-45db-8a12-18aa7b64098c'
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIMG_0211.png?alt=media&token=65c548fe-56e6-45d0-acaf-075a89c3dba4',
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIMG_0220.png?alt=media&token=51e53e4e-90fe-4d1d-94cc-c21b178d019e',
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIMG_0238.png?alt=media&token=9dc86c61-53d7-48cc-8ac1-03b1b160020f',
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIMG_0245.png?alt=media&token=c653f158-d2aa-459c-8965-3b53e0927f01',
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIMG_0258.png?alt=media&token=795266ea-5ce9-42df-a365-1c7bca9d1bdf',
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIMG_0725.png?alt=media&token=a15c8b38-5a87-4745-839c-2b627f73914d',
+    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIMG_0726.png?alt=media&token=3686604a-f800-477f-b4f5-e94b33c38b57'
   ];
 
   @override
@@ -29,7 +29,7 @@ class _CarouselPageState extends State<CarouselContactPage> {
         children: [
           CarouselSlider(
             options: CarouselOptions(
-                height: 100,
+                height: 130,
                 autoPlay: true,
                 aspectRatio: 1.5,
                 viewportFraction: 0.5,
@@ -77,25 +77,25 @@ class _CarouselPageState extends State<CarouselContactPage> {
                     ))
                 .toList(),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: imgList.asMap().entries.map((entry) {
-              return GestureDetector(
-                onTap: () => _controller.animateToPage(entry.key),
-                child: Container(
-                  width: 8.0,
-                  height: 8.0,
-                  margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: (Theme.of(context).brightness == Brightness.dark
-                              ? Colors.red
-                              : Colors.white)
-                          .withOpacity(_current == entry.key ? 0.9 : 0.4)),
-                ),
-              );
-            }).toList(),
-          ),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.center,
+          //   children: imgList.asMap().entries.map((entry) {
+          //     return GestureDetector(
+          //       onTap: () => _controller.animateToPage(entry.key),
+          //       child: Container(
+          //         width: 8.0,
+          //         height: 8.0,
+          //         margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+          //         decoration: BoxDecoration(
+          //             shape: BoxShape.circle,
+          //             color: (Theme.of(context).brightness == Brightness.dark
+          //                     ? Colors.red
+          //                     : Colors.white)
+          //                 .withOpacity(_current == entry.key ? 0.9 : 0.4)),
+          //       ),
+          //     );
+          //   }).toList(),
+          // ),
         ],
       ),
     );

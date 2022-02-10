@@ -81,7 +81,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                           children: [
                             Text(
                               'Sabai Agro Business & Innovation company',
-                              style: MyConstant().h2Style(),
+                              style: MyConstant().h23Style(),
                             )
                           ],
                         ),
@@ -146,7 +146,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                         Text(
                           'WE WILL GROW TOGETHER',
                           textAlign: TextAlign.center,
-                          style: MyConstant().h2Style(),
+                          style: MyConstant().h23Style(),
                         )
                       ],
                     ),

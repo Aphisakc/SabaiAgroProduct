@@ -134,7 +134,7 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                             children: [
                                               Text(
                                                 'SABAI AGRO',
-                                                style: MyConstant().h6Style(),
+                                                style: MyConstant().h10Style(),
                                               )
                                             ],
                                           ),
@@ -166,7 +166,7 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                                     padding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(
-                                                                0, 20, 0, 0),
+                                                                5, 20, 0, 0),
                                                     child: Text(
                                                       '_________________________________________',
                                                       style: FlutterFlowTheme
@@ -189,11 +189,11 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                                     AlignmentDirectional(0, 0),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 5, 0, 0),
+                                                      .fromSTEB(5, 5, 0, 0),
                                                   child: Text(
                                                     'WE WILL GROW TOGETHER',
                                                     style:
-                                                        MyConstant().h3Style(),
+                                                        MyConstant().h31Style(),
                                                   ),
                                                 ),
                                               )
@@ -233,7 +233,7 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                 EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                             child: Text(
                               'เติบโตไปด้วยกัน',
-                              style: MyConstant().h4Style(),
+                              style: MyConstant().th4Style(),
                             ),
                           )
                         ],

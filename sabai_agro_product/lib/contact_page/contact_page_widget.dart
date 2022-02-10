@@ -2,10 +2,9 @@ import 'package:sabai_agro_product/carousel_page/carousel_contact.dart';
 
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
+import '../utility/my_constant.dart';
 
 class ContactPageWidget extends StatefulWidget {
   ContactPageWidget({Key key}) : super(key: key);
@@ -22,36 +21,24 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
+        title: Row(
+          children: [Text('ติดต่อเรา', style: MyConstant().h2Style()),],
+        ),
         backgroundColor: Color(0xFF039BE5),
         automaticallyImplyLeading: true,
-        leading: Row(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            FlutterFlowIconButton(
-              borderColor: Colors.transparent,
-              borderRadius: 30,
-              borderWidth: 1,
-              buttonSize: 60,
-              icon: Icon(
-                Icons.arrow_back_ios,
-                color: FlutterFlowTheme.tertiaryColor,
-                size: 30,
-              ),
-              onPressed: () async {
-                Navigator.pop(context);
-              },
-            ),
-            Text(
-              'ติดต่อเรา',
-              style: FlutterFlowTheme.bodyText1.override(
-                fontFamily: 'PLSPRO001',
-                color: FlutterFlowTheme.tertiaryColor,
-                fontSize: 20,
-                fontWeight: FontWeight.w500,
-                useGoogleFonts: false,
-              ),
-            )
-          ],
+        leading: FlutterFlowIconButton(
+          borderColor: Colors.transparent,
+          borderRadius: 30,
+          borderWidth: 1,
+          buttonSize: 60,
+          icon: Icon(
+            Icons.arrow_back_ios,
+            color: FlutterFlowTheme.tertiaryColor,
+            size: 30,
+          ),
+          onPressed: () async {
+            Navigator.pop(context);
+          },
         ),
         actions: [],
         centerTitle: true,
@@ -78,7 +65,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image: Image.network(
-                          'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2Fbg_cont.jpg?alt=media&token=8ee66d95-7459-4091-aea2-556f644b2e49',
+                          'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/fish_product_page%2Fbg03.png?alt=media&token=f4cd132c-7b00-471e-9a90-99a22cdf8c57',
                         ).image,
                       ),
                     ),
@@ -90,7 +77,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                           children: [
                             Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+                                  EdgeInsetsDirectional.fromSTEB(16, 10, 16, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
@@ -108,15 +95,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                         children: [
                                           Text(
                                             'SABAI AGRO',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              color: FlutterFlowTheme
-                                                  .tertiaryColor,
-                                              fontSize: 35,
-                                              fontWeight: FontWeight.w500,
-                                              useGoogleFonts: false,
-                                            ),
+                                            style: MyConstant().h10Style(),
                                           )
                                         ],
                                       ),
@@ -132,24 +111,16 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                               children: [
                                                 Text(
                                                   'บริษัท สบาย อะโกร บิสซินเนส แอนด์ อินโนเวชั่น จำกัด',
-                                                  style: FlutterFlowTheme
-                                                      .bodyText1
-                                                      .override(
-                                                    fontFamily: 'PLSPRO001',
-                                                    color: FlutterFlowTheme
-                                                        .tertiaryColor,
-                                                    fontSize: 15,
-                                                    useGoogleFonts: false,
-                                                  ),
+                                                  style: MyConstant().h5Style(),
                                                 )
                                               ],
                                             ),
                                             Align(
                                               alignment: AlignmentDirectional(
-                                                  -1.11, 0),
+                                                  0, 0),
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 20, 0, 0),
+                                                    .fromSTEB(0, 10, 0, 0),
                                                 child: Text(
                                                   '_________________________________________',
                                                   style: FlutterFlowTheme
@@ -167,16 +138,16 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                     ],
                                   ),
                                   Container(
-                                    width: 75,
-                                    height: 75,
+                                    width: 60,
+                                    height: 60,
                                     decoration: BoxDecoration(
                                       // color: Color(0xAEFFFFFF),
                                       shape: BoxShape.circle,
                                     ),
                                     child: Image.asset(
                                       'assets/images/icon_contact.png',
-                                      width: 100,
-                                      height: 100,
+                                      width: 60,
+                                      height: 60,
                                       fit: BoxFit.contain,
                                     ),
                                   ),
@@ -191,13 +162,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                 children: [
                                   Text(
                                     'ทีมงานฝ่ายให้คำปรึกษา',
-                                    style: FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'PLSPRO001',
-                                      color: FlutterFlowTheme.tertiaryColor,
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w500,
-                                      useGoogleFonts: false,
-                                    ),
+                                    style: MyConstant().th4Style(),
                                   )
                                 ],
                               ),
@@ -207,7 +172,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                   EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                               child: Container(
                                   width: MediaQuery.of(context).size.width,
-                                  height: 100,
+                                  height: 140,
                                   decoration: BoxDecoration(
                                     color: Color(0x00EEEEEE),
                                   ),
@@ -264,7 +229,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                 shape: BoxShape.circle,
                                               ),
                                               child: Image.network(
-                                                'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIcon_Team%2001_2.png?alt=media&token=dcb1ed44-fed1-4127-ba99-26e7839ea3f6',
+                                                'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIcon_Team%2001_2.png?alt=media&token=13014461-390c-4402-a480-37378651b61b',
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
@@ -291,15 +256,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   12, 5, 0, 0),
                                           child: Text(
                                             'สมเกียรติ จันทร์มะโน',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              color:
-                                                  FlutterFlowTheme.primaryColor,
-                                              fontSize: 25,
-                                              fontWeight: FontWeight.w600,
-                                              useGoogleFonts: false,
-                                            ),
+                                            style: MyConstant().h2blueStyle(),
                                           ),
                                         ),
                                         Padding(
@@ -308,12 +265,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   12, 0, 0, 0),
                                           child: Text(
                                             'Somkiat Chanmano',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              fontSize: 20,
-                                              useGoogleFonts: false,
-                                            ),
+                                            style: MyConstant().h7Style(),
                                           ),
                                         ),
                                         Padding(
@@ -322,14 +274,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   12, 0, 0, 0),
                                           child: Text(
                                             'MVVP',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              color:
-                                                  FlutterFlowTheme.primaryColor,
-                                              fontSize: 20,
-                                              useGoogleFonts: false,
-                                            ),
+                                            style: MyConstant().en2blueStyle(),
                                           ),
                                         ),
                                         Padding(
@@ -338,12 +283,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   12, 0, 0, 0),
                                           child: Text(
                                             '060-413-5252, 089-095-5198',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              fontSize: 20,
-                                              useGoogleFonts: false,
-                                            ),
+                                           style: MyConstant().h8StyleShowlist(),
                                           ),
                                         )
                                       ],
@@ -386,7 +326,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                 shape: BoxShape.circle,
                                               ),
                                               child: Image.network(
-                                                'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIcon_Team%2002.png?alt=media&token=e4d47738-c7dc-4344-843d-def01be9f5db',
+                                                'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIcon_Team%2002.png?alt=media&token=a65971ea-b015-4034-a3d8-96b07b5aa1b9',
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
@@ -413,15 +353,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   12, 5, 0, 0),
                                           child: Text(
                                             'ขันติ บุญสมพงศ์',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              color:
-                                                  FlutterFlowTheme.primaryColor,
-                                              fontSize: 25,
-                                              fontWeight: FontWeight.w600,
-                                              useGoogleFonts: false,
-                                            ),
+                                            style: MyConstant().h2blueStyle(),
                                           ),
                                         ),
                                         Padding(
@@ -430,12 +362,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   12, 0, 0, 0),
                                           child: Text(
                                             'Khanti Boonsompomg',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              fontSize: 20,
-                                              useGoogleFonts: false,
-                                            ),
+                                            style: MyConstant().h7Style(),
                                           ),
                                         ),
                                         Padding(
@@ -444,14 +371,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   12, 0, 0, 0),
                                           child: Text(
                                             'Sale Manager',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              color:
-                                                  FlutterFlowTheme.primaryColor,
-                                              fontSize: 20,
-                                              useGoogleFonts: false,
-                                            ),
+                                            style: MyConstant().en2blueStyle(),
                                           ),
                                         ),
                                         Padding(
@@ -460,12 +380,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   12, 0, 0, 0),
                                           child: Text(
                                             '086-355-5632',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              fontSize: 20,
-                                              useGoogleFonts: false,
-                                            ),
+                                           style: MyConstant().h8StyleShowlist(),
                                           ),
                                         )
                                       ],
@@ -508,7 +423,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                 shape: BoxShape.circle,
                                               ),
                                               child: Image.network(
-                                                'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIcon_Team%2003.png?alt=media&token=03d4c923-4735-4670-88b9-00b5bd21a217',
+                                                'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIcon_Team%2003.png?alt=media&token=404b3354-42f7-43e5-b442-ab046644fcc0',
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
@@ -535,15 +450,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   12, 5, 0, 0),
                                           child: Text(
                                             'อดุลวิทย์ จันทะนาวงษ์',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              color:
-                                                  FlutterFlowTheme.primaryColor,
-                                              fontSize: 25,
-                                              fontWeight: FontWeight.w600,
-                                              useGoogleFonts: false,
-                                            ),
+                                            style: MyConstant().h2blueStyle(),
                                           ),
                                         ),
                                         Padding(
@@ -552,12 +459,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   12, 0, 0, 0),
                                           child: Text(
                                             'Adulvit Chanthanawong',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              fontSize: 20,
-                                              useGoogleFonts: false,
-                                            ),
+                                            style: MyConstant().h7Style(),
                                           ),
                                         ),
                                         Padding(
@@ -566,14 +468,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   12, 0, 0, 0),
                                           child: Text(
                                             'Technical Sale Manager',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              color:
-                                                  FlutterFlowTheme.primaryColor,
-                                              fontSize: 20,
-                                              useGoogleFonts: false,
-                                            ),
+                                            style: MyConstant().en2blueStyle(),
                                           ),
                                         ),
                                         Row(
@@ -586,14 +481,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   .fromSTEB(12, 0, 0, 0),
                                               child: Text(
                                                 '064-992-2724',
-                                                style: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
-                                                  fontFamily: 'PLSPRO001',
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.normal,
-                                                  useGoogleFonts: false,
-                                                ),
+                                                style: MyConstant().h8StyleShowlist(),
                                               ),
                                             ),
                                           ],
@@ -638,7 +526,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                 shape: BoxShape.circle,
                                               ),
                                               child: Image.network(
-                                                'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIcon_Team%2004.png?alt=media&token=9968b36a-96cd-4540-adcb-e079c9bd64f2',
+                                                'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIcon_Team%2004.png?alt=media&token=3b9200c3-7e8e-477f-aa97-eeefe1728d98',
                                                 fit: BoxFit.contain,
                                               ),
                                             ),
@@ -665,15 +553,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   12, 5, 0, 0),
                                           child: Text(
                                             'ชัยยันต์ อาจสอน',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              color:
-                                                  FlutterFlowTheme.primaryColor,
-                                              fontSize: 25,
-                                              fontWeight: FontWeight.w600,
-                                              useGoogleFonts: false,
-                                            ),
+                                            style: MyConstant().h2blueStyle(),
                                           ),
                                         ),
                                         Padding(
@@ -682,12 +562,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   12, 0, 0, 0),
                                           child: Text(
                                             'Chaiyan Arjsorn',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              fontSize: 20,
-                                              useGoogleFonts: false,
-                                            ),
+                                            style: MyConstant().h7Style(),
                                           ),
                                         ),
                                         Padding(
@@ -696,14 +571,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   12, 0, 0, 0),
                                           child: Text(
                                             'Sale Manager',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              color:
-                                                  FlutterFlowTheme.primaryColor,
-                                              fontSize: 20,
-                                              useGoogleFonts: false,
-                                            ),
+                                            style: MyConstant().en2blueStyle(),
                                           ),
                                         ),
                                         Row(
@@ -716,13 +584,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   .fromSTEB(12, 0, 0, 0),
                                               child: Text(
                                                 '081-344-1692',
-                                                style: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
-                                                  fontFamily: 'PLSPRO001',
-                                                  fontSize: 20,
-                                                  useGoogleFonts: false,
-                                                ),
+                                               style: MyConstant().h8StyleShowlist(),
                                               ),
                                             ),
                                             Image.asset(
@@ -773,7 +635,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                 shape: BoxShape.circle,
                                               ),
                                               child: Image.network(
-                                                'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIcon_Team%2005.png?alt=media&token=851d1a07-bd06-4e0b-b8ce-128e45dbaa8a',
+                                                'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIcon_Team%2005.png?alt=media&token=9fd4376d-e43a-4889-9b4b-a11002fd3b97',
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
@@ -800,15 +662,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   12, 5, 0, 0),
                                           child: Text(
                                             'เนตรทิพย์ ผึ้งภุมริน',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              color:
-                                                  FlutterFlowTheme.primaryColor,
-                                              fontSize: 25,
-                                              fontWeight: FontWeight.w600,
-                                              useGoogleFonts: false,
-                                            ),
+                                            style: MyConstant().h2blueStyle(),
                                           ),
                                         ),
                                         Padding(
@@ -817,12 +671,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   12, 0, 0, 0),
                                           child: Text(
                                             'Natethip Pungpummarin',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              fontSize: 20,
-                                              useGoogleFonts: false,
-                                            ),
+                                            style: MyConstant().h7Style(),
                                           ),
                                         ),
                                         Padding(
@@ -831,14 +680,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   12, 0, 0, 0),
                                           child: Text(
                                             'Sale Manager',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              color:
-                                                  FlutterFlowTheme.primaryColor,
-                                              fontSize: 20,
-                                              useGoogleFonts: false,
-                                            ),
+                                            style: MyConstant().en2blueStyle(),
                                           ),
                                         ),
                                         Row(
@@ -851,13 +693,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   .fromSTEB(12, 0, 0, 0),
                                               child: Text(
                                                 '064-615-3662',
-                                                style: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
-                                                  fontFamily: 'PLSPRO001',
-                                                  fontSize: 20,
-                                                  useGoogleFonts: false,
-                                                ),
+                                                style: MyConstant().h8StyleShowlist(),
                                               ),
                                             ),
                                             Image.asset(
@@ -908,7 +744,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                 shape: BoxShape.circle,
                                               ),
                                               child: Image.network(
-                                                'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIcon_Team%2006.png?alt=media&token=e6b13e66-7757-4cab-823d-3db3d685f90b',
+                                                'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIcon_Team%2006.png?alt=media&token=2037da2f-6b03-4cd0-9bba-219d3f335035',
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
@@ -935,15 +771,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   12, 5, 0, 0),
                                           child: Text(
                                             'พัชรพล อินหงสา',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              color:
-                                                  FlutterFlowTheme.primaryColor,
-                                              fontSize: 25,
-                                              fontWeight: FontWeight.w600,
-                                              useGoogleFonts: false,
-                                            ),
+                                            style: MyConstant().h2blueStyle(),
                                           ),
                                         ),
                                         Padding(
@@ -952,12 +780,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   12, 0, 0, 0),
                                           child: Text(
                                             'Phatcharapon Inhongsa',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              fontSize: 20,
-                                              useGoogleFonts: false,
-                                            ),
+                                            style: MyConstant().h7Style(),
                                           ),
                                         ),
                                         Padding(
@@ -966,14 +789,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   12, 0, 0, 0),
                                           child: Text(
                                             'Consultative Sale Representative',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              color:
-                                                  FlutterFlowTheme.primaryColor,
-                                              fontSize: 20,
-                                              useGoogleFonts: false,
-                                            ),
+                                            style: MyConstant().en2blueStyle(),
                                           ),
                                         ),
                                         Row(
@@ -986,13 +802,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   .fromSTEB(12, 0, 0, 0),
                                               child: Text(
                                                 '084-429-8940',
-                                                style: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
-                                                  fontFamily: 'PLSPRO001',
-                                                  fontSize: 20,
-                                                  useGoogleFonts: false,
-                                                ),
+                                                style: MyConstant().h8StyleShowlist(),
                                               ),
                                             ),
                                             Image.asset(
@@ -1043,7 +853,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                 shape: BoxShape.circle,
                                               ),
                                               child: Image.network(
-                                                'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIcon_Team%2007.png?alt=media&token=218d15d7-c8de-421c-8948-aaea4ec29018',
+                                                'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIcon_Team%2007.png?alt=media&token=141eea69-7622-4df4-9554-e2ccdc7df164',
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
@@ -1070,15 +880,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   12, 5, 0, 0),
                                           child: Text(
                                             'ปรีชา ชินามล',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              color:
-                                                  FlutterFlowTheme.primaryColor,
-                                              fontSize: 25,
-                                              fontWeight: FontWeight.w600,
-                                              useGoogleFonts: false,
-                                            ),
+                                          style: MyConstant().h2blueStyle(),
                                           ),
                                         ),
                                         Padding(
@@ -1087,12 +889,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   12, 0, 0, 0),
                                           child: Text(
                                             'Precha Chinamon',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              fontSize: 20,
-                                              useGoogleFonts: false,
-                                            ),
+                                            style: MyConstant().h7Style(),
                                           ),
                                         ),
                                         Padding(
@@ -1101,14 +898,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   12, 0, 0, 0),
                                           child: Text(
                                             'Consultative Sale Representative',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'PLSPRO001',
-                                              color:
-                                                  FlutterFlowTheme.primaryColor,
-                                              fontSize: 20,
-                                              useGoogleFonts: false,
-                                            ),
+                                            style: MyConstant().en2blueStyle(),
                                           ),
                                         ),
                                         Row(
@@ -1121,13 +911,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                                   .fromSTEB(12, 0, 0, 0),
                                               child: Text(
                                                 '086-006-1918',
-                                                style: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
-                                                  fontFamily: 'PLSPRO001',
-                                                  fontSize: 20,
-                                                  useGoogleFonts: false,
-                                                ),
+                                               style: MyConstant().h8StyleShowlist(),
                                               ),
                                             ),
                                             Image.asset(
