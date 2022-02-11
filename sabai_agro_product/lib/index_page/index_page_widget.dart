@@ -118,8 +118,8 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                                     children: [
                                       Image.asset(
                                         'assets/images/logo.png',
-                                        width: 120,
-                                        height: 120,
+                                        width: 110,
+                                        height: 110,
                                         fit: BoxFit.cover,
                                       ),
                                       Column(
