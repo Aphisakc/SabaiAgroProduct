@@ -390,114 +390,12 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                               ],
                             ),
                           ),
+
                           Container(
                             width: MediaQuery.of(context).size.width,
                             height: 140,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.tertiaryColor,
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Align(
-                                      alignment: AlignmentDirectional(0, 0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16, 0, 0, 0),
-                                            child: Container(
-                                              width: 100,
-                                              height: 100,
-                                              clipBehavior: Clip.antiAlias,
-                                              decoration: BoxDecoration(
-                                                shape: BoxShape.circle,
-                                              ),
-                                              child: Image.network(
-                                                'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIcon_Team%2003.png?alt=media&token=404b3354-42f7-43e5-b442-ab046644fcc0',
-                                                fit: BoxFit.cover,
-                                              ),
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 10, 0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  12, 5, 0, 0),
-                                          child: Text(
-                                            'อดุลวิทย์ จันทะนาวงษ์',
-                                            style: MyConstant().h2blueStyle(),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  12, 0, 0, 0),
-                                          child: Text(
-                                            'Adulvit Chanthanawong',
-                                            style: MyConstant().h7Style(),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  12, 0, 0, 0),
-                                          child: Text(
-                                            'Technical Sale Manager',
-                                            style: MyConstant().en2blueStyle(),
-                                          ),
-                                        ),
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(12, 0, 0, 0),
-                                              child: Text(
-                                                '064-992-2724',
-                                                style: MyConstant().h8StyleShowlist(),
-                                              ),
-                                            ),
-                                          ],
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                          Container(
-                            width: MediaQuery.of(context).size.width,
-                            height: 140,
-                            decoration: BoxDecoration(
-                              color: Color(0xFFD4D4D4),
                             ),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -570,7 +468,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   12, 0, 0, 0),
                                           child: Text(
-                                            'Sale Manager',
+                                            'Senior Advisor',
                                             style: MyConstant().en2blueStyle(),
                                           ),
                                         ),
@@ -585,6 +483,112 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                                               child: Text(
                                                 '081-344-1692',
                                                style: MyConstant().h8StyleShowlist(),
+                                              ),
+                                            ),
+                                            
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+
+
+                          Container(
+                            width: MediaQuery.of(context).size.width,
+                            height: 140,
+                            decoration: BoxDecoration(
+                              color: Color(0xFFD4D4D4),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Align(
+                                      alignment: AlignmentDirectional(0, 0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceAround,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    16, 0, 0, 0),
+                                            child: Container(
+                                              width: 100,
+                                              height: 100,
+                                              clipBehavior: Clip.antiAlias,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                              ),
+                                              child: Image.network(
+                                                'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/contact_page%2FIcon_Team%20031.png?alt=media&token=4bf66a8b-5849-4dcb-b942-0cba1a97d046',
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                Expanded(
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 0, 10, 0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  12, 5, 0, 0),
+                                          child: Text(
+                                            'อดุลวิทย์ จันทะนาวงษ์',
+                                            style: MyConstant().h2blueStyle(),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  12, 0, 0, 0),
+                                          child: Text(
+                                            'Adulvit Chanthanawong',
+                                            style: MyConstant().h7Style(),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  12, 0, 0, 0),
+                                          child: Text(
+                                            'Technical Sale Manager',
+                                            style: MyConstant().en2blueStyle(),
+                                          ),
+                                        ),
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(12, 0, 0, 0),
+                                              child: Text(
+                                                '064-992-2724',
+                                                style: MyConstant().h8StyleShowlist(),
                                               ),
                                             ),
                                             Image.asset(
@@ -602,11 +606,12 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                               ],
                             ),
                           ),
+                          
                           Container(
                             width: MediaQuery.of(context).size.width,
                             height: 140,
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.tertiaryColor,
+                              color: FlutterFlowTheme.tertiaryColor
                             ),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
