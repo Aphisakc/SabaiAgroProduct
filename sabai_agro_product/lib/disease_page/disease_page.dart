@@ -194,6 +194,7 @@ class _DiseasePageWidgetState extends State<DiseasePageWidget>
                           padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                           child: Text(
                             'แบคทีเรีย',
+                            style: MyConstant().h3Style(),
                           
                           ),
                         ),
@@ -211,6 +212,7 @@ class _DiseasePageWidgetState extends State<DiseasePageWidget>
                           padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                           child: Text(
                             'ปรสิตภายนอก',
+                            style: MyConstant().h3Style(),
                           ),
                         ),
                       ),
@@ -227,6 +229,7 @@ class _DiseasePageWidgetState extends State<DiseasePageWidget>
                           padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                           child: Text(
                             'เชื้อรา',
+                            style: MyConstant().h3Style(),
                           ),
                         ),
                       ),
@@ -243,6 +246,7 @@ class _DiseasePageWidgetState extends State<DiseasePageWidget>
                           padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                           child: Text(
                             'ไวรัส',
+                            style: MyConstant().h3Style(),
                           ),
                         ),
                       ),
@@ -259,6 +263,7 @@ class _DiseasePageWidgetState extends State<DiseasePageWidget>
                           padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                           child: Text(
                             'คุณภาพน้ำ',
+                            style: MyConstant().h3Style(),
                           ),
                         ),
                       ),
