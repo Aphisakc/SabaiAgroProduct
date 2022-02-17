@@ -6,6 +6,7 @@ import 'package:sabai_agro_product/widgets/product_page_widget.dart';
 import 'package:sabai_agro_product/home_page/home_page_widget.dart';
 import 'package:sabai_agro_product/utility/my_constant.dart';
 
+import '../disease_page/disease_page.dart';
 import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -417,23 +418,49 @@ class _IndexPageWidgetState extends State<IndexPageWidget>
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Container(
-                              width: MediaQuery.of(context).size.width * 0.333,
-                              decoration: BoxDecoration(),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Image.network(
-                                    'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FiconPic%2FMenu%20Icon_05.png?alt=media&token=c2d9d282-0c88-4699-85ab-1f54d209516a',
-                                    width: 100,
-                                    height: 100,
-                                    fit: BoxFit.contain,
+                            InkWell(
+                              onTap: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => DiseasePageWidget(
+                                        titleGroup: 'โรคสัตว์น้ำ',
+                                      )),
+                                );
+                              },
+                              child: Container(
+                                width:
+                                    MediaQuery.of(context).size.width * 0.333,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.rectangle,
+                                ),
+                                child: InkWell(
+                                  onTap: () async {
+                                    await Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              DiseasePageWidget(
+                                                titleGroup: 'โรคสัตว์น้ำ',
+                                              )),
+                                    );
+                                  },
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Image.network(
+                                        'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/index_page%2FiconPic%2FMenu%20Icon_05.png?alt=media&token=c2d9d282-0c88-4699-85ab-1f54d209516a',
+                                        width: 100,
+                                        height: 100,
+                                        fit: BoxFit.cover,
+                                      ),
+                                      Text(
+                                        'โรคสัตว์น้ำ',
+                                        style: MyConstant().h7Style(),
+                                      )
+                                    ],
                                   ),
-                                  Text(
-                                    'โรคสัตว์น้ำ',
-                                    style: MyConstant().h7Style(),
-                                  )
-                                ],
+                                ),
                               ),
                             ),
                             Container(
