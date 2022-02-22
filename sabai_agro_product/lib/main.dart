@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:sabai_agro_product/index_page/index_page_widget.dart';
+import 'package:sabai_agro_product/welcome_page/welcome_page_widget.dart';
 
 
 Future<void> main() async {
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Sabai Agro Product',
       supportedLocales: const [Locale('en', '')],
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: IndexPageWidget(),
+      home: WelcomePageWidget(),
     );
   }
 }
