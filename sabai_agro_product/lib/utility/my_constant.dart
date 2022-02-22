@@ -28,6 +28,21 @@ class MyConstant {
         fontWeight: FontWeight.w500,
       ));
 
+      TextStyle h21Style() => GoogleFonts.ibmPlexSansThai(
+          textStyle: TextStyle(
+        fontSize: 14,
+        color: tertiaryColor,
+        fontWeight: FontWeight.w500,
+        fontStyle: FontStyle.italic
+      ));
+
+      TextStyle h22Style() => GoogleFonts.ibmPlexSansThai(
+          textStyle: TextStyle(
+        fontSize: 16,
+        color: tertiaryColor,
+        fontWeight: FontWeight.bold,
+      ));
+
   TextStyle h23Style() => GoogleFonts.firaSans(
           textStyle: TextStyle(
         fontSize: 16,

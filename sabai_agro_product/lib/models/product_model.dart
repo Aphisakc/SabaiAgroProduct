@@ -39,3 +39,4 @@ class ProductModel {
 
   factory ProductModel.fromJson(String source) => ProductModel.fromMap(json.decode(source));
 }
+

@@ -2,6 +2,7 @@ import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
+
 import 'package:sabai_agro_product/models/product_model.dart';
 import 'package:sabai_agro_product/utility/my_constant.dart';
 
@@ -76,7 +77,7 @@ class _DetailProductWidgetState extends State<DetailProductWidget> {
         centerTitle: true,
         elevation: 4,
       ),
-      backgroundColor: Color(0xFFF5F5F5),
+      backgroundColor: Color(0xFF00000),
       body: SafeArea(
         child: Container(
           width: MediaQuery.of(context).size.width,
@@ -141,19 +142,19 @@ class _DetailProductWidgetState extends State<DetailProductWidget> {
                                               Text(
                                                 'บริษัท สบาย อะโกร บิสซินเนส แอนด์ อินโนเวชั่น จำกัด',
                                                 style: MyConstant().h5Style(),
-                                                ),
-                                              
+                                              ),
                                             ],
                                           ),
                                           Align(
                                             alignment:
                                                 AlignmentDirectional(0, 0),
                                             child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 10, 0, 0),
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0, 10, 0, 0),
                                               child: Text(
                                                 '_________________________________________',
-                                                style: FlutterFlowTheme.bodyText1
+                                                style: FlutterFlowTheme
+                                                    .bodyText1
                                                     .override(
                                                   fontFamily: 'Lato',
                                                   color: Colors.white,
@@ -228,7 +229,8 @@ class _DetailProductWidgetState extends State<DetailProductWidget> {
                                                   decoration: BoxDecoration(),
                                                   child: Text(
                                                     productModel.name,
-                                                    style: MyConstant().th5Style(),
+                                                    style:
+                                                        MyConstant().th5Style(),
                                                   ),
                                                 )
                                               ],
@@ -254,7 +256,8 @@ class _DetailProductWidgetState extends State<DetailProductWidget> {
                                                     decoration: BoxDecoration(),
                                                     child: AutoSizeText(
                                                       productModel.details,
-                                                      style: MyConstant().h3Style(),
+                                                      style: MyConstant()
+                                                          .h3Style(),
                                                     ),
                                                   ),
                                                 )
@@ -310,15 +313,21 @@ class _DetailProductWidgetState extends State<DetailProductWidget> {
                 ),
               ),
               pdfDocument == null
-                  ? SizedBox()
+                  ? SizedBox(
+                    
+                  )
                   : Expanded(
                       child: PDFViewer(
+                    
                       document: pdfDocument,
                       scrollDirection: Axis.vertical,
                       showIndicator: false,
                       showNavigation: false,
                       showPicker: false,
-                    ))
+                      
+                    )
+                    )
+
             ],
           ),
         ),

@@ -4,6 +4,7 @@ import 'package:sabai_agro_product/detail_product/detail_product_widget.dart';
 import 'package:sabai_agro_product/models/product_model.dart';
 import 'package:sabai_agro_product/utility/my_constant.dart';
 
+// ignore: must_be_immutable
 class ShowListProduct extends StatelessWidget {
   String urlImage;
   String nameProduct;

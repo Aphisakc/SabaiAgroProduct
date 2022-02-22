@@ -9,8 +9,9 @@ import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 
 class ProductPageWidget extends StatefulWidget {
-  final String collectionFirebase;
   final String titleGroup;
+
+  final String collectionFirebase;
   final Widget carouselWidget;
   final Widget iconWidget;
 
@@ -42,7 +43,7 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
 
     collectionFirebase = widget.collectionFirebase;
     titlegroup = widget.titleGroup;
-    // titlegroup = 'กลุ่มผลิตภัณฑ์ สำหรับปลา';
+    
     carouselWidget = widget.carouselWidget;
     iconWidget = widget.iconWidget;
 
