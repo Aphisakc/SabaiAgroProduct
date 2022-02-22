@@ -388,7 +388,7 @@ class WaterWidget extends StatelessWidget {
                         children: [
                           Text(
                             'ออกซิเจนต่ำ',
-                           style: MyConstant().h22Style(),
+                           style: MyConstant().h6Style(),
                           ),
                           Text(
                             '( Low Dissolved Oxygen )',
@@ -434,7 +434,7 @@ class WaterWidget extends StatelessWidget {
                         children: [
                           Text(
                             'ของเสียสะสม',
-                           style: MyConstant().h22Style(),
+                           style: MyConstant().h6Style(),
                           ),
                           Text(
                             '( N Waste )',
@@ -506,7 +506,7 @@ class WaterWidget extends StatelessWidget {
                         children: [
                           Text(
                             'สารเคมีปนเปื้อน',
-                           style: MyConstant().h22Style(),
+                           style: MyConstant().h6Style(),
                           ),
                           Text(
                             '( Water Pollution )',
@@ -552,7 +552,7 @@ class WaterWidget extends StatelessWidget {
                         children: [
                           Text(
                             'ฤดูน้ำไหลหลาก',
-                            style: MyConstant().h22Style(),
+                            style: MyConstant().h6Style(),
                           ),
                           Text(
                             '( Fluctuate Level )',
@@ -642,8 +642,8 @@ class VirusWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        'ไวรัสตายเดือน',
-                        style: MyConstant().h22Style(),
+                        'ไวรัสปลาตายเดือน',
+                        style: MyConstant().h6Style(),
                       ),
                       Text(
                         '( Tilapia Lake Virus )',
@@ -894,7 +894,7 @@ class FungiWidget extends StatelessWidget {
                         children: [
                           Text(
                             'เชื้อราปุยฝ้าย',
-                            style: MyConstant().h22Style(),
+                            style: MyConstant().h6Style(),
                           ),
                           Text(
                             '( Saprolegnia sp., Achly sp. )',
@@ -940,7 +940,7 @@ class FungiWidget extends StatelessWidget {
                         children: [
                           Text(
                             'บราชิโอไมโครซิส',
-                            style: MyConstant().h22Style(),
+                            style: MyConstant().h6Style(),
                           ),
                           Text(
                             '( Braciomicrosis sp. )',
@@ -950,7 +950,7 @@ class FungiWidget extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(75, 5, 0, 5),
+                      padding: EdgeInsetsDirectional.fromSTEB(40, 5, 0, 5),
                       child: Container(
                         width: 120,
                         height: 120,
@@ -1012,7 +1012,7 @@ class FungiWidget extends StatelessWidget {
                         children: [
                           Text(
                             'เชื้อ EUS',
-                            style: MyConstant().h22Style(),
+                            style: MyConstant().h6Style(),
                           ),
                           Text(
                             '( Epizootic Ulcerative Syndrome )',
@@ -1116,7 +1116,7 @@ class ParasiteWidget extends StatelessWidget {
                         children: [
                           Text(
                             'เห็บปลา',
-                            style: MyConstant().h22Style(),
+                            style: MyConstant().h6Style(),
                           ),
                           Text(
                             '( Argulus spp. )',
@@ -1176,7 +1176,7 @@ class ParasiteWidget extends StatelessWidget {
                         children: [
                           Text(
                             'หมัดปลา,เห็บสายฟ้า',
-                            style: MyConstant().h22Style(),
+                            style: MyConstant().th4Style(),
                           ),
                           Text(
                             '( Isopod )',
@@ -1236,7 +1236,7 @@ class ParasiteWidget extends StatelessWidget {
                         children: [
                           Text(
                             'หนอนสมอ',
-                            style: MyConstant().h22Style(),
+                            style: MyConstant().h6Style(),
                           ),
                           Text(
                             '( Lernaea spp. )',
@@ -1307,7 +1307,7 @@ class ParasiteWidget extends StatelessWidget {
                         children: [
                           Text(
                             'เห็บระฆัง',
-                            style: MyConstant().h22Style(),
+                            style: MyConstant().h6Style(),
                           ),
                           Text(
                             '( Trichodina spp. )',
@@ -1367,7 +1367,7 @@ class ParasiteWidget extends StatelessWidget {
                         children: [
                           Text(
                             'ปลิงใส',
-                            style: MyConstant().h22Style(),
+                            style: MyConstant().h6Style(),
                           ),
                           Text(
                             '( Dactylogylus spp. )',
@@ -1427,7 +1427,7 @@ class ParasiteWidget extends StatelessWidget {
                         children: [
                           Text(
                             'จุดขาว',
-                            style: MyConstant().h22Style(),
+                            style: MyConstant().h6Style(),
                           ),
                           Text(
                             '( Ichthyophthirius sp. )',
@@ -1491,7 +1491,7 @@ class ParasiteWidget extends StatelessWidget {
                           ),
                           Text(
                             'โรค Zoothamnium spp.',
-                            style: MyConstant().h21Style(),
+                            style: MyConstant().h22Style(),
                           ),
                         ],
                       ),
@@ -1547,7 +1547,7 @@ class ParasiteWidget extends StatelessWidget {
                         children: [
                           Text(
                             'โรคสนิมเหล็ก',
-                            style: MyConstant().h22Style(),
+                            style: MyConstant().h6Style(),
                           ),
                           Text(
                             '( Oodinium sp. )',
