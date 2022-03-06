@@ -36,6 +36,14 @@ class MyConstant {
         fontStyle: FontStyle.italic
       ));
 
+      TextStyle h211Style() => GoogleFonts.ibmPlexSansThai(
+          textStyle: TextStyle(
+        fontSize: 14,
+        color: tertiaryColor,
+        fontWeight: FontWeight.w500,
+        fontStyle: FontStyle.normal
+      ));
+
       TextStyle h22Style() => GoogleFonts.ibmPlexSansThai(
           textStyle: TextStyle(
         fontSize: 16,

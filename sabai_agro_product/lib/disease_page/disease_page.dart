@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:sabai_agro_product/disease_page/details_disease_page.dart';
 import 'package:sabai_agro_product/flutter_flow/flutter_flow_widgets.dart';
 import 'package:sabai_agro_product/models/product_model.dart';
 import 'package:sabai_agro_product/utility/my_constant.dart';
@@ -388,11 +389,11 @@ class WaterWidget extends StatelessWidget {
                         children: [
                           Text(
                             'ออกซิเจนต่ำ',
-                           style: MyConstant().h6Style(),
+                            style: MyConstant().h6Style(),
                           ),
                           Text(
                             '( Low Dissolved Oxygen )',
-                           style: MyConstant().h21Style(),
+                            style: MyConstant().h21Style(),
                           ),
                         ],
                       ),
@@ -434,11 +435,11 @@ class WaterWidget extends StatelessWidget {
                         children: [
                           Text(
                             'ของเสียสะสม',
-                           style: MyConstant().h6Style(),
+                            style: MyConstant().h6Style(),
                           ),
                           Text(
                             '( N Waste )',
-                           style: MyConstant().h21Style(),
+                            style: MyConstant().h21Style(),
                           ),
                         ],
                       ),
@@ -506,7 +507,7 @@ class WaterWidget extends StatelessWidget {
                         children: [
                           Text(
                             'สารเคมีปนเปื้อน',
-                           style: MyConstant().h6Style(),
+                            style: MyConstant().h6Style(),
                           ),
                           Text(
                             '( Water Pollution )',
@@ -700,7 +701,7 @@ class VirusWidget extends StatelessWidget {
                       padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 0),
                       child: Text(
                         'โรคอุบัติใหม่ในไทยมีรายงานการระบาคครั้งแรกในอิสราเอลเมื่อ 3 ปีก่อนเกิดจากการติดเชื้อไวรัส Tilapia Lake Virus วงจรการติดและกลการก่อโรคยังไม่ทราบแน่ชัดในประเทศไทยพบการติดเชื้อแล้วในปลานิลดำและปลานิลแดงและมีรายงานการระบาดไปทั่วโลกสร้างความเสียหายได้ 50-70% ภายใน 10วันอัตราการตายสูงขึ้นฤดูร้อนไม่พบการตายในปลาชนิดอื่นๆ (ปลาจีน ปลาตะเพียน)ที่เลี้ยงร่วมกัน',
-                        style: MyConstant().h2Style(),
+                        style: MyConstant().h211Style(),
                       ),
                     ),
                     Padding(
@@ -761,7 +762,7 @@ class VirusWidget extends StatelessWidget {
                       padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 0),
                       child: Text(
                         '     - ลูกปลาเล็กจะทยอยตาย พบอาการอ่อนแรง ตัวซีด ส่วนหัวตกเลือด ท้องบวมน้ำ มีเลือดออกในตา ตาอาจบวม มีแผลหลุมหรือรอยถลอกที่ผิว\n     - การตายจะเพิ่มขึ้นอย่างรวดเร็วภายใน 2 - 5 วัน จะตาย >50% หลังจากนั้นอัตราการตายจะค่อยๆลดลงและหยุดหลังจากตายวันแรก 7 - 15 วัน\n     - ไม่ตอบสนองต่อยาปฏิชีวนะ',
-                        style: MyConstant().h2Style(),
+                        style: MyConstant().h211Style(),
                       ),
                     ),
                     Padding(
@@ -821,8 +822,8 @@ class VirusWidget extends StatelessWidget {
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 0),
                       child: Text(
-                        'ไม่มีวิธีรักษาเนื่องจากเป็นเชื้อไวรัสจึงสามารถทำได้แค่ป้องกันไม่ให้เกิดโรคแต่เมื่อติดเชื้อแล้วต้องรักษาไปตามอาการที่ปรากฏ และจัดการฟาร์มดังนี้\n     - ลดอาหารลงเหลือ  1 มื้อในช่วงเช้า\n     - ผสมวิตามินรวมหรือวิตามินซีติดต่อกัน 7 วัน\n     - ตักปลาตายหรือใกล้ตายออกให้มากที่สุด     \n       นำมาทำลายบนฝั่ง\n     - แขวนเกลือ เปิดมุ้งกั้นอาหาร และเปิดระบบให้อากาศ\n     - เก็บตัวอย่างปลาป่วยและแจ้งนักวิชาการเพื่อตรจววิเคราะห์เชื้อ',
-                        style: MyConstant().h2Style(),
+                        'ไม่มีวิธีรักษาเนื่องจากเป็นเชื้อไวรัสจึงสามารถทำได้แค่ป้องกันไม่ให้เกิดโรคแต่เมื่อติดเชื้อแล้วต้องรักษาไปตามอาการที่ปรากฏ และจัดการฟาร์มดังนี้\n     - ลดอาหารลงเหลือ  1 มื้อในช่วงเช้า\n     - ผสมวิตามินรวมหรือวิตามินซีติดต่อกัน 7 วัน\n     - ตักปลาตายหรือใกล้ตายออกให้มากที่สุดนำมาทำลายบนฝั่งให้เรียบร้อย\n     - แขวนเกลือ เปิดมุ้งกั้นอาหาร และเปิดระบบให้อากาศ\n     - เก็บตัวอย่างปลาป่วยและแจ้งนักวิชาการเพื่อตรจววิเคราะห์เชื้อ',
+                        style: MyConstant().h211Style(),
                       ),
                     ),
                   ],
@@ -1168,7 +1169,7 @@ class ParasiteWidget extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(40, 5, 0, 5),
+                      padding: EdgeInsetsDirectional.fromSTEB(20, 5, 0, 5),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -1176,7 +1177,7 @@ class ParasiteWidget extends StatelessWidget {
                         children: [
                           Text(
                             'หมัดปลา,เห็บสายฟ้า',
-                            style: MyConstant().th4Style(),
+                            style: MyConstant().h6Style(),
                           ),
                           Text(
                             '( Isopod )',
@@ -1479,7 +1480,7 @@ class ParasiteWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(30, 5, 5, 5),
+                      padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -1487,11 +1488,11 @@ class ParasiteWidget extends StatelessWidget {
                         children: [
                           Text(
                             'โรค Epitheliocystis spp.',
-                            style: MyConstant().h22Style(),
+                            style: MyConstant().th4Style(),
                           ),
                           Text(
                             'โรค Zoothamnium spp.',
-                            style: MyConstant().h22Style(),
+                            style: MyConstant().th4Style(),
                           ),
                         ],
                       ),
@@ -1630,26 +1631,39 @@ class BacWidget extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(5, 5, 0, 5),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'โรคตาโปน ว่ายน้ำควงสว่าน',
-                            style: MyConstant().h22Style(),
+                    InkWell(
+                      onTap: () async {
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DetailDiseasePage(
+                              collectionFirebase: 'disease_page',
+                              diseaseGroup: 'แบคทีเรีย',
+                            ),
                           ),
-                          Text(
-                            'เชื้อก่อโรค : สเตร๊ปโตค๊อกคัส',
-                            style: MyConstant().h21Style(),
-                          ),
-                          Text(
-                            '( Streptococcus sp. )',
-                            style: MyConstant().h21Style(),
-                          ),
-                        ],
+                        );
+                      },
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(5, 5, 0, 5),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'โรคตาโปน ว่ายน้ำควงสว่าน',
+                              style: MyConstant().h22Style(),
+                            ),
+                            Text(
+                              'เชื้อก่อโรค : สเตร๊ปโตค๊อกคัส',
+                              style: MyConstant().h21Style(),
+                            ),
+                            Text(
+                              '( Streptococcus sp. )',
+                              style: MyConstant().h21Style(),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],
@@ -1829,7 +1843,7 @@ class BacWidget extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(40, 5, 0, 5),
+                      padding: EdgeInsetsDirectional.fromSTEB(45, 5, 0, 5),
                       child: Container(
                         width: 120,
                         height: 120,
