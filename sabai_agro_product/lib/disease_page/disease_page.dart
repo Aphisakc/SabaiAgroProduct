@@ -1,9 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
 import 'package:sabai_agro_product/disease_page/details_disease_page.dart';
 import 'package:sabai_agro_product/flutter_flow/flutter_flow_widgets.dart';
-import 'package:sabai_agro_product/models/product_model.dart';
+import 'package:sabai_agro_product/models/disease_model.dart';
 import 'package:sabai_agro_product/utility/my_constant.dart';
+import 'package:sabai_agro_product/widgets/show_list_bact.dart';
 
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -31,7 +33,7 @@ class _DiseasePageWidgetState extends State<DiseasePageWidget>
   String titlegroup;
 
   bool load = true;
-  var productModels = <ProductModel>[];
+  var diseaseModels = <DiseaseModel>[];
   String collectionFirebase;
 
   @override
@@ -41,27 +43,6 @@ class _DiseasePageWidgetState extends State<DiseasePageWidget>
     titlegroup = widget.titleGroup;
 
     collectionFirebase = widget.collectionFirebase;
-
-    readFishProduct();
-  }
-
-  Future<void> readFishProduct() async {
-    if (productModels.isNotEmpty) {
-      productModels.clear();
-    }
-    await FirebaseFirestore.instance
-        .collection(collectionFirebase)
-        .get()
-        .then((value) {
-      for (var item in value.docs) {
-        ProductModel model = ProductModel.fromMap(item.data());
-        print('name = ${model.name}');
-        setState(() {
-          load = false;
-          productModels.add(model);
-        });
-      }
-    });
   }
 
   @override
@@ -1582,349 +1563,64 @@ class ParasiteWidget extends StatelessWidget {
   }
 }
 
-class BacWidget extends StatelessWidget {
-  const BacWidget({
+class BacWidget extends StatefulWidget {
+  final String collectionFirebase;
+
+  BacWidget({
     Key key,
+    @required this.collectionFirebase,
   }) : super(key: key);
+
+  @override
+  State<BacWidget> createState() => _BacWidgetState();
+}
+
+class _BacWidgetState extends State<BacWidget> {
+  bool load = true;
+  var diseaseModels = <DiseaseModel>[];
+  String collectionFirebase;
+
+  @override
+  void initState() {
+    super.initState();
+
+    collectionFirebase = widget.collectionFirebase;
+
+    readDiseaseList();
+  }
+
+  Future<void> readDiseaseList() async {
+    if (diseaseModels.isNotEmpty) {
+      diseaseModels.clear();
+    }
+    await FirebaseFirestore.instance
+        .collection('disease_page')
+        .get()
+        .then((value) {
+      for (var item in value.docs) {
+        DiseaseModel model = DiseaseModel.fromMap(item.data());
+        print('name = ${model.name}');
+        setState(() {
+          load = false;
+          diseaseModels.add(model);
+        });
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 5),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 120,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(60),
-                    bottomRight: Radius.circular(0),
-                    topLeft: Radius.circular(60),
-                    topRight: Radius.circular(0),
-                  ),
-                  shape: BoxShape.rectangle,
-                  border: Border.all(
-                    color: FlutterFlowTheme.tertiaryColor,
-                    width: 3,
-                  ),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 5, 5, 5),
-                      child: Container(
-                        width: 120,
-                        height: 120,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: Image.network(
-                          'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/disease_page%2Fstrep1.png?alt=media&token=763e2850-45c1-43ef-8ad6-0dd959ab11b1',
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () async {
-                        await Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => DetailDiseasePage(
-                              collectionFirebase: 'disease_page',
-                              diseaseGroup: 'แบคทีเรีย',
-                            ),
-                          ),
-                        );
-                      },
-                      child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(5, 5, 0, 5),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'โรคตาโปน ว่ายน้ำควงสว่าน',
-                              style: MyConstant().h22Style(),
-                            ),
-                            Text(
-                              'เชื้อก่อโรค : สเตร๊ปโตค๊อกคัส',
-                              style: MyConstant().h21Style(),
-                            ),
-                            Text(
-                              '( Streptococcus sp. )',
-                              style: MyConstant().h21Style(),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+      child: Container(
+        child: load
+            ? Center(child: CircularProgressIndicator())
+            : ListView.builder(
+                itemCount: diseaseModels.length,
+                itemBuilder: (context, index) => ShowListBact(
+                    urlImage: diseaseModels[index].pic,
+                    nameDisease: diseaseModels[index].name,
+                    strainDisease: diseaseModels[index].strains),
               ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 5),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 120,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(0),
-                    bottomRight: Radius.circular(60),
-                    topLeft: Radius.circular(0),
-                    topRight: Radius.circular(60),
-                  ),
-                  shape: BoxShape.rectangle,
-                  border: Border.all(
-                    color: FlutterFlowTheme.tertiaryColor,
-                    width: 3,
-                  ),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(10, 5, 5, 5),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            'โรคท้องบวม กกหูบวม ตกเลือด',
-                            style: MyConstant().h22Style(),
-                          ),
-                          Text(
-                            'เชื้อก่อโรค : แอโรโมนาส',
-                            style: MyConstant().h21Style(),
-                          ),
-                          Text(
-                            '( Aeromonas sp. )',
-                            style: MyConstant().h21Style(),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 5),
-                      child: Container(
-                        width: 120,
-                        height: 120,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: Image.network(
-                          'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/disease_page%2Faero1.png?alt=media&token=93c75667-e705-4114-8efa-580b1d09869e',
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 5),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 120,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(60),
-                    bottomRight: Radius.circular(0),
-                    topLeft: Radius.circular(60),
-                    topRight: Radius.circular(0),
-                  ),
-                  shape: BoxShape.rectangle,
-                  border: Border.all(
-                    color: FlutterFlowTheme.tertiaryColor,
-                    width: 3,
-                  ),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 5, 5, 5),
-                      child: Container(
-                        width: 120,
-                        height: 120,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: Image.network(
-                          'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/disease_page%2Fflavo1.png?alt=media&token=7c68bda7-3e42-4848-b9c4-e297add79a5d',
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(5, 5, 0, 5),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'โรคตัวด่าง ตัวเปื่อย เหงือกเน่า',
-                            style: MyConstant().h22Style(),
-                          ),
-                          Text(
-                            'เชื้อก่อโรค : ฟลาโวแบคทีเรี่ยม',
-                            style: MyConstant().h21Style(),
-                          ),
-                          Text(
-                            '(Flavobacterium columnaris. )',
-                            style: MyConstant().h21Style(),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 5),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 120,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(0),
-                    bottomRight: Radius.circular(60),
-                    topLeft: Radius.circular(0),
-                    topRight: Radius.circular(60),
-                  ),
-                  shape: BoxShape.rectangle,
-                  border: Border.all(
-                    color: FlutterFlowTheme.tertiaryColor,
-                    width: 3,
-                  ),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(40, 5, 5, 5),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            'โรคฟรานซิสเซลล่า',
-                            style: MyConstant().h22Style(),
-                          ),
-                          Text(
-                            'เชื้อก่อโรค : ฟรานซิสเซลล่า',
-                            style: MyConstant().h21Style(),
-                          ),
-                          Text(
-                            '( Francissiella sp. )',
-                            style: MyConstant().h21Style(),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(45, 5, 0, 5),
-                      child: Container(
-                        width: 120,
-                        height: 120,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: Image.network(
-                          'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/disease_page%2Ffrancis1.png?alt=media&token=b30a9f39-9a9b-4e7e-b5ce-5f7846b019cf',
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 5),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 120,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(60),
-                    bottomRight: Radius.circular(0),
-                    topLeft: Radius.circular(60),
-                    topRight: Radius.circular(0),
-                  ),
-                  shape: BoxShape.rectangle,
-                  border: Border.all(
-                    color: FlutterFlowTheme.tertiaryColor,
-                    width: 3,
-                  ),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 5, 5, 5),
-                      child: Container(
-                        width: 120,
-                        height: 120,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: Image.network(
-                          'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/disease_page%2Fedward1.png?alt=media&token=b63ff262-542a-4d82-bdeb-b30a8147cfb4',
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 5),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            'โรคหัวเป็นหลุ่ม ลอยหัว ว่ายควง',
-                            style: MyConstant().h22Style(),
-                          ),
-                          Text(
-                            'เชื้อก่อโรค : เอ็ดเวิร์ดเซลล่า',
-                            style: MyConstant().h21Style(),
-                          ),
-                          Text(
-                            '( Edwardsiella ictaluri )',
-                            style: MyConstant().h21Style(),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }
