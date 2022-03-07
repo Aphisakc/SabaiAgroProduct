@@ -1,11 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-import 'package:sabai_agro_product/disease_page/details_disease_page.dart';
 import 'package:sabai_agro_product/flutter_flow/flutter_flow_widgets.dart';
 import 'package:sabai_agro_product/models/disease_model.dart';
 import 'package:sabai_agro_product/utility/my_constant.dart';
 import 'package:sabai_agro_product/widgets/show_list_bact.dart';
+import 'package:sabai_agro_product/widgets/show_list_fungi.dart';
+import 'package:sabai_agro_product/widgets/show_list_water.dart';
 
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -164,11 +165,17 @@ class _DiseasePageWidgetState extends State<DiseasePageWidget>
               height: MediaQuery.of(context).size.height,
               color: Colors.black,
               child: TabBarView(controller: _tabController, children: <Widget>[
-                BacWidget(),
+                BacWidget(
+                  collectionFirebase: 'bacteria_page',
+                ),
                 ParasiteWidget(),
-                FungiWidget(),
+                FungiWidget(
+                  collectionFirebase: 'fungi_page',
+                ),
                 VirusWidget(),
-                WaterWidget(),
+                WaterWidget(
+                  collectionFirebase: 'water_page',
+                ),
               ]),
             ),
           )
@@ -312,258 +319,66 @@ class _DiseasePageWidgetState extends State<DiseasePageWidget>
   }
 }
 
-class WaterWidget extends StatelessWidget {
-  const WaterWidget({
+class WaterWidget extends StatefulWidget {
+  final String collectionFirebase;
+
+  WaterWidget({
     Key key,
+    @required this.collectionFirebase,
   }) : super(key: key);
 
   @override
+  State<WaterWidget> createState() => _WaterWidgetState();
+}
+
+class _WaterWidgetState extends State<WaterWidget> {
+  bool load = true;
+  var diseaseModels = <DiseaseModel>[];
+  String collectionFirebase;
+
+  @override
+  void initState() {
+    super.initState();
+
+    collectionFirebase = widget.collectionFirebase;
+
+    readDiseaseList();
+  }
+
+  Future<void> readDiseaseList() async {
+    if (diseaseModels.isNotEmpty) {
+      diseaseModels.clear();
+    }
+    await FirebaseFirestore.instance
+        .collection('water_page')
+        .get()
+        .then((value) {
+      for (var item in value.docs) {
+        DiseaseModel model = DiseaseModel.fromMap(item.data());
+        print('name = ${model.name}');
+        setState(() {
+          load = false;
+          diseaseModels.add(model);
+        });
+      }
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 5),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 120,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(60),
-                    bottomRight: Radius.circular(0),
-                    topLeft: Radius.circular(60),
-                    topRight: Radius.circular(0),
-                  ),
-                  shape: BoxShape.rectangle,
-                  border: Border.all(
-                    color: FlutterFlowTheme.tertiaryColor,
-                    width: 3,
-                  ),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 5, 5, 5),
-                      child: Container(
-                        width: 120,
-                        height: 120,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: Image.network(
-                          'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/water_isse_page%2Fdo1.png?alt=media&token=26e292c1-2669-45dd-a21d-59d3510b5913',
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(5, 5, 0, 5),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            'ออกซิเจนต่ำ',
-                            style: MyConstant().h6Style(),
-                          ),
-                          Text(
-                            '( Low Dissolved Oxygen )',
-                            style: MyConstant().h21Style(),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+    return Container(
+      child: load
+          ? Center(child: CircularProgressIndicator())
+          : ListView.builder(
+              itemCount: diseaseModels.length,
+              itemBuilder: (context, index) => ShowListWater(
+                urlImage: diseaseModels[index].pic,
+                nameDisease: diseaseModels[index].name,
+                strainDisease: diseaseModels[index].strains,
+                diseaseModel: diseaseModels[index],
+                index: index,
               ),
             ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 5),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 120,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(0),
-                    bottomRight: Radius.circular(60),
-                    topLeft: Radius.circular(0),
-                    topRight: Radius.circular(60),
-                  ),
-                  shape: BoxShape.rectangle,
-                  border: Border.all(
-                    color: FlutterFlowTheme.tertiaryColor,
-                    width: 3,
-                  ),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(30, 5, 5, 5),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            'ของเสียสะสม',
-                            style: MyConstant().h6Style(),
-                          ),
-                          Text(
-                            '( N Waste )',
-                            style: MyConstant().h21Style(),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(50, 5, 0, 5),
-                      child: Container(
-                        width: 120,
-                        height: 120,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: Image.network(
-                          'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/water_isse_page%2Fnwaste1.png?alt=media&token=90661cb4-c697-437a-be4f-e657e1444e49',
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 5),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 120,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(60),
-                    bottomRight: Radius.circular(0),
-                    topLeft: Radius.circular(60),
-                    topRight: Radius.circular(0),
-                  ),
-                  shape: BoxShape.rectangle,
-                  border: Border.all(
-                    color: FlutterFlowTheme.tertiaryColor,
-                    width: 3,
-                  ),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 5),
-                      child: Container(
-                        width: 120,
-                        height: 120,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: Image.network(
-                          'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/water_isse_page%2Fpollution1.png?alt=media&token=743324f4-dce4-4057-860d-6b2faad78c60',
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(30, 5, 0, 5),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            'สารเคมีปนเปื้อน',
-                            style: MyConstant().h6Style(),
-                          ),
-                          Text(
-                            '( Water Pollution )',
-                            style: MyConstant().h21Style(),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 5),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 120,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(0),
-                    bottomRight: Radius.circular(60),
-                    topLeft: Radius.circular(0),
-                    topRight: Radius.circular(60),
-                  ),
-                  shape: BoxShape.rectangle,
-                  border: Border.all(
-                    color: FlutterFlowTheme.tertiaryColor,
-                    width: 3,
-                  ),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(30, 5, 5, 5),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            'ฤดูน้ำไหลหลาก',
-                            style: MyConstant().h6Style(),
-                          ),
-                          Text(
-                            '( Fluctuate Level )',
-                            style: MyConstant().h21Style(),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(50, 5, 0, 5),
-                      child: Container(
-                        width: 120,
-                        height: 120,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: Image.network(
-                          'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/water_isse_page%2Ffluc1.png?alt=media&token=f8d22817-3a58-4016-b21e-91d2be79e10a',
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }
@@ -679,9 +494,9 @@ class VirusWidget extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
                       child: Text(
-                        'โรคอุบัติใหม่ในไทยมีรายงานการระบาคครั้งแรกในอิสราเอลเมื่อ 3 ปีก่อนเกิดจากการติดเชื้อไวรัส Tilapia Lake Virus วงจรการติดและกลการก่อโรคยังไม่ทราบแน่ชัดในประเทศไทยพบการติดเชื้อแล้วในปลานิลดำและปลานิลแดงและมีรายงานการระบาดไปทั่วโลกสร้างความเสียหายได้ 50-70% ภายใน 10วันอัตราการตายสูงขึ้นฤดูร้อนไม่พบการตายในปลาชนิดอื่นๆ (ปลาจีน ปลาตะเพียน)ที่เลี้ยงร่วมกัน',
+                        '      โรคอุบัติใหม่ในไทยมีรายงานการระบาคครั้งแรกในอิสราเอลเมื่อ 3 ปีก่อนเกิดจากการติดเชื้อไวรัส Tilapia Lake Virus วงจรการติดและกลการก่อโรคยังไม่ทราบแน่ชัดในประเทศไทยพบการติดเชื้อแล้วในปลานิลดำและปลานิลแดงและมีรายงานการระบาดไปทั่วโลกสร้างความเสียหายได้ 50-70% ภายใน 10วันอัตราการตายสูงขึ้นฤดูร้อนไม่พบการตายในปลาชนิดอื่นๆ (ปลาจีน ปลาตะเพียน)ที่เลี้ยงร่วมกัน',
                         style: MyConstant().h211Style(),
                       ),
                     ),
@@ -818,198 +633,65 @@ class VirusWidget extends StatelessWidget {
   }
 }
 
-class FungiWidget extends StatelessWidget {
-  const FungiWidget({
+class FungiWidget extends StatefulWidget {
+  final String collectionFirebase;
+  FungiWidget({
     Key key,
+    @required this.collectionFirebase,
   }) : super(key: key);
 
   @override
+  State<FungiWidget> createState() => _FungiWidgetState();
+}
+
+class _FungiWidgetState extends State<FungiWidget> {
+  bool load = true;
+  var diseaseModels = <DiseaseModel>[];
+  String collectionFirebase;
+
+  @override
+  void initState() {
+    super.initState();
+
+    collectionFirebase = widget.collectionFirebase;
+
+    readDiseaseList();
+  }
+
+  Future<void> readDiseaseList() async {
+    if (diseaseModels.isNotEmpty) {
+      diseaseModels.clear();
+    }
+    await FirebaseFirestore.instance
+        .collection('fungi_page')
+        .get()
+        .then((value) {
+      for (var item in value.docs) {
+        DiseaseModel model = DiseaseModel.fromMap(item.data());
+        print('name = ${model.name}');
+        setState(() {
+          load = false;
+          diseaseModels.add(model);
+        });
+      }
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 5),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 120,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(60),
-                    bottomRight: Radius.circular(0),
-                    topLeft: Radius.circular(60),
-                    topRight: Radius.circular(0),
-                  ),
-                  shape: BoxShape.rectangle,
-                  border: Border.all(
-                    color: FlutterFlowTheme.tertiaryColor,
-                    width: 3,
-                  ),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 5, 5, 5),
-                      child: Container(
-                        width: 120,
-                        height: 120,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: Image.network(
-                          'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/fungi_page%2Fsaproleg1.png?alt=media&token=3ce35ab5-c8cc-4168-853c-b54933a68c2c',
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(5, 5, 0, 5),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            'เชื้อราปุยฝ้าย',
-                            style: MyConstant().h6Style(),
-                          ),
-                          Text(
-                            '( Saprolegnia sp., Achly sp. )',
-                            style: MyConstant().h21Style(),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+    return Container(
+      child: load
+          ? Center(child: CircularProgressIndicator())
+          : ListView.builder(
+              itemCount: diseaseModels.length,
+              itemBuilder: (context, index) => ShowListFungi(
+                urlImage: diseaseModels[index].pic,
+                nameDisease: diseaseModels[index].name,
+                strainDisease: diseaseModels[index].strains,
+                diseaseModel: diseaseModels[index],
+                index: index,
               ),
             ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 5),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 120,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(0),
-                    bottomRight: Radius.circular(60),
-                    topLeft: Radius.circular(0),
-                    topRight: Radius.circular(60),
-                  ),
-                  shape: BoxShape.rectangle,
-                  border: Border.all(
-                    color: FlutterFlowTheme.tertiaryColor,
-                    width: 3,
-                  ),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(30, 5, 5, 5),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            'บราชิโอไมโครซิส',
-                            style: MyConstant().h6Style(),
-                          ),
-                          Text(
-                            '( Braciomicrosis sp. )',
-                            style: MyConstant().h21Style(),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(40, 5, 0, 5),
-                      child: Container(
-                        width: 120,
-                        height: 120,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: Image.network(
-                          'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/fungi_page%2Fbrachio1.png?alt=media&token=1a89dd9c-dec5-4bc9-b20b-03c2ba56191c',
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 5),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 120,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(60),
-                    bottomRight: Radius.circular(0),
-                    topLeft: Radius.circular(60),
-                    topRight: Radius.circular(0),
-                  ),
-                  shape: BoxShape.rectangle,
-                  border: Border.all(
-                    color: FlutterFlowTheme.tertiaryColor,
-                    width: 3,
-                  ),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 5),
-                      child: Container(
-                        width: 120,
-                        height: 120,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: Image.network(
-                          'https://firebasestorage.googleapis.com/v0/b/sabaiagroproduct.appspot.com/o/fungi_page%2Feus1.png?alt=media&token=95137b19-e98c-40d6-aefe-cc10dcd6c059',
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 5),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            'เชื้อ EUS',
-                            style: MyConstant().h6Style(),
-                          ),
-                          Text(
-                            '( Epizootic Ulcerative Syndrome )',
-                            style: MyConstant().h21Style(),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }
@@ -1594,7 +1276,7 @@ class _BacWidgetState extends State<BacWidget> {
       diseaseModels.clear();
     }
     await FirebaseFirestore.instance
-        .collection('disease_page')
+        .collection('bacteria_page')
         .get()
         .then((value) {
       for (var item in value.docs) {
@@ -1617,9 +1299,12 @@ class _BacWidgetState extends State<BacWidget> {
             : ListView.builder(
                 itemCount: diseaseModels.length,
                 itemBuilder: (context, index) => ShowListBact(
-                    urlImage: diseaseModels[index].pic,
-                    nameDisease: diseaseModels[index].name,
-                    strainDisease: diseaseModels[index].strains),
+                  urlImage: diseaseModels[index].pic,
+                  nameDisease: diseaseModels[index].name,
+                  strainDisease: diseaseModels[index].strains,
+                  diseaseModel: diseaseModels[index],
+                  index: index,
+                ),
               ),
       ),
     );

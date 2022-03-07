@@ -5,14 +5,14 @@ import 'package:sabai_agro_product/flutter_flow/flutter_flow_theme.dart';
 import 'package:sabai_agro_product/models/disease_model.dart';
 import 'package:sabai_agro_product/utility/my_constant.dart';
 
-class ShowListBact extends StatelessWidget {
+class ShowListFungi extends StatelessWidget {
   String urlImage;
   String nameDisease;
   String strainDisease;
-  int index;
+   int index;
   DiseaseModel diseaseModel;
 
-  ShowListBact({
+  ShowListFungi({
     
     Key key,
     
@@ -30,8 +30,8 @@ class ShowListBact extends StatelessWidget {
         await Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => DetailDiseasePage(diseaseModel: diseaseModel,
-              
+            builder: (context) => DetailDiseasePage(
+            diseaseModel: diseaseModel,
             ),
           ),
         );
@@ -44,10 +44,10 @@ class ShowListBact extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.black,
             borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(60),
-              bottomRight: Radius.circular(0),
-              topLeft: Radius.circular(60),
-              topRight: Radius.circular(0),
+              bottomLeft: Radius.circular(0),
+              bottomRight: Radius.circular(60),
+              topLeft: Radius.circular(0),
+              topRight: Radius.circular(60),
             ),
             shape: BoxShape.rectangle,
             border: Border.all(
@@ -57,24 +57,11 @@ class ShowListBact extends StatelessWidget {
           ),
           child: Row(
             mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 5, 5, 5),
-                child: Container(
-                  width: 120,
-                  height: 120,
-                  clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                  ),
-                  child: Image.network(
-                    urlImage,
-                    fit: BoxFit.contain,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(5, 5, 0, 5),
+                padding: EdgeInsetsDirectional.fromSTEB(5, 5, 10, 5),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -91,6 +78,22 @@ class ShowListBact extends StatelessWidget {
                   ],
                 ),
               ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(20, 5, 0, 5),
+                child: Container(
+                  width: 120,
+                  height: 120,
+                  clipBehavior: Clip.antiAlias,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                  ),
+                  child: Image.network(
+                    urlImage,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+              
             ],
           ),
         ),
